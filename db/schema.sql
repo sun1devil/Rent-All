@@ -15,6 +15,7 @@ CREATE TABLE accounts
 	email varchar(100) NOT NULL,
 	phone int NOT NULL,
 	rating decimal(3,2) DEFAULT NULL,
+	key varchar(8) NOT NULL,
 	PRIMARY KEY (id)
 );
 
@@ -24,7 +25,11 @@ CREATE TABLE transactions
 	start_date datetime NOT NULL,
 	end_date datetime NOT NULL,
 	total decimal(8,2) DEFAULT NULL,
-	PRIMARY KEY (id)
+	renter_id int,
+	item_id int NOT NULL,
+	PRIMARY KEY (id),
+	FOREIGN KEY(renter_id) REFERENCES accounts(id),
+	FOREIGN KEY(item_id) REFERENCES items(id)
 );
 
 CREATE TABLE items 
@@ -36,5 +41,7 @@ CREATE TABLE items
 	start_date datetime NOT NULL,
 	end_date datetime NOT NULL,
 	picture_link varchar(255) NOT NULL,
-	PRIMARY KEY(id)
+	owner_id int NOT NULL,
+	PRIMARY KEY(id),
+	FOREIGN KEY(owner_id), REFERENCES accounts(id)
 );
