@@ -1,6 +1,6 @@
-DROP DATABASE rentall_db;
-CREATE DATABASE rentall_db;
-USE rentall_db;
+DROP DATABASE rent_all_db;
+CREATE DATABASE rent_all_db;
+USE rent_all_db;
 
 CREATE TABLE accounts
 (
