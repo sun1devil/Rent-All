@@ -32,20 +32,13 @@ module.exports = function(sequelize, DataTypes){
             validate: {
                 len:[1,255]
             }
-        },
-        owner_id: {
-            type: DataTypes.INTEGER,
         }
 
     });
 
-    // Items.associate = function(models){
-    //     Items.belongsTo(models.account, {
-    //         foreignKey: {
-    //             allowNull:false
-    //         }
-    //     });
-    // }
+    Items.associate = function(models){
+        Items.belongsTo(models.Accounts, {foreignKey: "owner_id"});
+    }
 
     return Items;
 }
