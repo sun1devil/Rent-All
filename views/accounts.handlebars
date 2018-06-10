@@ -1,0 +1,77 @@
+<header>
+  <h1>Create or Edit an account</h1>
+</header>
+<body>
+
+	{{!-- id int NOT NULL AUTO_INCREMENT,
+-- 	first_name varchar(30) NOT NULL,
+-- 	last_name varchar(30) NOT NULL,
+-- 	street varchar(30) NOT NULL,
+-- 	city varchar(30) NOT NULL,
+-- 	state varchar(2) NOT NULL,
+-- 	zip int(5) NOT NULL,
+-- 	balance decimal(12,2) DEFAULT NULL,
+-- 	email varchar(100) NOT NULL,
+-- 	phone int NOT NULL,
+-- 	rating decimal(3,2) DEFAULT NULL,
+-- 	account_key varchar(8) NOT NULL,
+-- 	PRIMARY KEY (id)
+-- ); --}}
+
+
+
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputinputFirst">First Name</label>
+      <input type="email" class="form-control" id="inputFirst" placeholder="Email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputLast">Last Name</label>
+      <input type="password" class="form-control" id="inputLast" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail">Email</label>
+      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPhone">Phone</label>
+      <input type="password" class="form-control" id="inputPhone" placeholder="Phone">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputStreet">Street</label>
+    <input type="text" class="form-control" id="inputStreet" placeholder="1234 Main St">
+  </div>
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputBalance">Balance</label>
+      <input type="email" class="form-control" id="inputBalacnce" placeholder="Balance">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputRating">Rating</label>
+      <input type="password" class="form-control" id="inputRating" placeholder="Rating">
+    </div>
+  </div>
+ 
+  <button type="submit" id= "add-account" class="btn btn-primary">Submit</button>
+</form>
