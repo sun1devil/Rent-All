@@ -76,6 +76,7 @@ module.exports = function(sequelize, DataTypes) {
 
     Accounts.associate = function(models){
         Accounts.hasMany(models.Items, {
+            foreignKey: "owner_id",
             onDelete: "cascade"
         });
     };
