@@ -29,7 +29,7 @@ $("#add-account").on("click", function(event) {
       city: $("#inputCity").val().trim(),
       state: $("#inputState").val().trim(),
       zip: $("#inputZip").val().trim(),
-      balance: $("#ialance").val().trim(),
+      balance: $("#inputBalance").val().trim(),
       email: $("#inputEmail").val().trim(),
       phone: $("#inputPhone").val().trim(),
       rating: $("#inputRating").val().trim(),
