@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Accounts = sequelize.define("Account", {
+    var Accounts = sequelize.define("Accounts", {
         first_name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -74,11 +74,11 @@ module.exports = function(sequelize, DataTypes) {
 
     });
 
-    // Accounts.associate = function(models){
-    //     Accounts.hasMany(models.Items, {
-    //         onDelete: "cascade"
-    //     });
-    // };
+    Accounts.associate = function(models){
+        Accounts.hasMany(models.Items, {
+            onDelete: "cascade"
+        });
+    };
 
     return Accounts;
 }
