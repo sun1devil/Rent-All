@@ -36,7 +36,7 @@ $("#add-account").on("click", function(event) {
     };
   
     // send an AJAX POST-request with jQuery
-    $.post("/api/newAccount", newAccount)
+    // $.post("/api/newAccount", newAccount)
       // on success, run this callback
       .then(function(data) {
         // log the data we found
@@ -46,8 +46,8 @@ $("#add-account").on("click", function(event) {
       });
   
     // empty each input box by replacing the value with an empty string
-    $("#name").val("");
-    first_name: $("#inputFirst").val("")
+    
+      first_name: $("#inputFirst").val("")
       last_name: $("#inputLast").val("").
       street: $("inputStreet").val("")
       city: $("#inputCity").val("")
