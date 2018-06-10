@@ -29,13 +29,16 @@ $("#add-account").on("click", function(event) {
       city: $("#inputCity").val().trim(),
       state: $("#inputState").val().trim(),
       zip: $("#inputZip").val().trim(),
-      balance: $("#ialance").val().trim(),
+
+      balance: $("#inputBalance").val().trim(),
+
       email: $("#inputEmail").val().trim(),
       phone: $("#inputPhone").val().trim(),
       rating: $("#inputRating").val().trim(),
     };
   
     // send an AJAX POST-request with jQuery
+
     $.post("/api/newAccount", newAccount)
       // on success, run this callback
       .then(function(data) {
@@ -46,17 +49,17 @@ $("#add-account").on("click", function(event) {
       });
   
     // empty each input box by replacing the value with an empty string
-    $("#name").val("");
-    first_name: $("#inputFirst").val("")
-      last_name: $("#inputLast").val("").
-      street: $("inputStreet").val("")
-      city: $("#inputCity").val("")
-      state: $("#inputState").val("")
-      zip: $("#inputZip").val("")
-      balance: $("#inputBalance").val("")
-      email: $("#inputEmail").val("")
-      phone: $("#inputPhone").val("")
-      rating: $("#inputRating").val("")
+
+     // first_name: $("#inputFirst").val("")
+//       last_name: $("#inputLast").val("").
+//       street: $("inputStreet").val("")
+//       city: $("#inputCity").val("")
+//       state: $("#inputState").val("")
+//       zip: $("#inputZip").val("")
+//       balance: $("#inputBalance").val("")
+//       email: $("#inputEmail").val("")
+//       phone: $("#inputPhone").val("")
+//       rating: $("#inputRating").val("")
   
   });
   
