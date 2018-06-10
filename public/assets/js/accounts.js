@@ -47,16 +47,16 @@ $("#add-account").on("click", function(event) {
   
     // empty each input box by replacing the value with an empty string
     
-      first_name: $("#inputFirst").val("")
-      last_name: $("#inputLast").val("").
-      street: $("inputStreet").val("")
-      city: $("#inputCity").val("")
-      state: $("#inputState").val("")
-      zip: $("#inputZip").val("")
-      balance: $("#inputBalance").val("")
-      email: $("#inputEmail").val("")
-      phone: $("#inputPhone").val("")
-      rating: $("#inputRating").val("")
+      $("#inputFirst").val("")
+      $("#inputLast").val("").
+      $("inputStreet").val("")
+      $("#inputCity").val("")
+      $("#inputState").val("")
+      $("#inputZip").val("")
+      $("#inputBalance").val("")
+      $("#inputEmail").val("")
+      $("#inputPhone").val("")
+      $("#inputRating").val("")
   
   });
   
