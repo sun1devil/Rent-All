@@ -81,5 +81,11 @@ module.exports = function(sequelize, DataTypes) {
         });
     };
 
+    Accounts.associate = function(models){
+        Accounts.hasMany(models.Transactions, {
+            foreignKey: "renter_id"
+        });
+    };
+
     return Accounts;
 }
