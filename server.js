@@ -15,11 +15,11 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 //TODO: To be enabled when public folder is created.
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
-// require("./controllers/account_controller.js")(app);
-// require("./controllers/item_controller.js")(app);
-// require("./controllers/transaction_controller.js")(app);
+require("./controllers/account_controller.js")(app);
+require("./controllers/item_controller.js")(app);
+require("./controllers/transaction_controller.js")(app);
 
 
 db.sequelize.sync({force: true}).then(function(){
