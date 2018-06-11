@@ -15,7 +15,11 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     Transactions.associate = function(models){
-        Items.belongsTo(models.Accounts, {foreignKey: "renter_id"});
+        Transactions.belongsTo(models.Accounts, {foreignKey: "renter_id"});
+    }
+
+     Transactions.associate = function(models){
+        Transactions.belongsTo(models.Items, {foreignKey: "items_id"});
     }
 
     return Transactions;
