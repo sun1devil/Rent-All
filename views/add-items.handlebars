@@ -1,7 +1,7 @@
 <header>
   <h1>Add an item to share</h1>
 </header>
-<body>
+
 
 
 {{!-- name varchar(60) NOT NULL, 
@@ -10,14 +10,11 @@
 -- 	start_date datetime NOT NULL,
 -- 	end_date datetime NOT NULL,
 -- 	picture_link varchar(255) NOT NULL, --}}
-{{!-- 
 
-{{#each team}}
-<h1>{{this.team_name}}</h1>
 
-{{/each}} --}}
 
-<form action="/items/add" method="POST">
+
+<form >
   <div class="form-row">
     <div class="form-group col-md-6">
 
@@ -49,8 +46,21 @@
       <input type="text" class="form-control" id="inputPrice" name="input_price" placeholder="Price">
     </div>
     <div class="form-group col-md-6">
-      <label for="inputPassword4">Link to Photo</label>
+      <label for="inputPhoto">Link to Photo</label>
       <input type="image" class="form-control" id="inputPhoto" name="input_photo" placeholder="Photo">
+
+    </div>
+  </div>
+
+   <div class="form-row">
+    <div class="form-group col-md-6">
+
+      <label for="inputAccount">Account</label>
+      <input type="text" class="form-control" id="inputAccount" name="input_account" placeholder="Account">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword">Password Photo</label>
+      <input type="image" class="form-control" id="inputPassword" name="input_password" placeholder="Password">
 
     </div>
   </div>
@@ -61,4 +71,3 @@
   <button type="submit" id="add-item" class="btn btn-primary">SHARE</button>
 
 </form>
-
