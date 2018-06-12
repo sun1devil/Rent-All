@@ -10,8 +10,7 @@
     </div>
 
 {{/if}}
-{{#unless}}
-
+{{#unless available}}
   <div class="card unavail" style="width: 18rem;">
     <img class="card-img-top" src={{image}} alt={{name}}>
     <div class="card-body">
@@ -27,3 +26,23 @@
     {{!-- var itemID = $(this).attr("data-id"); --}}
 
 {{!-- }); --}}
+
+<header>
+  <h2>List of Items</h2>
+</header>
+
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="forrent">Item Name:</label>
+    <input type="text" id="forrent" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="rentedout">Unavailable</label><br>
+    {{!-- <input type="radio" name="sleepy" value="1" checked> Sleepy!<br> --}}
+    {{!-- <input type="radio" name="sleepy" value="0"> Awake --}}
+  </div>
+
+  <button type="submit">Select Item</button>
+</form>
