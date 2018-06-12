@@ -8,12 +8,12 @@ module.exports = function(app){
         });
     });
 
-    app.get("/search/:item_id/:account_id/:account_key", function(req,res){
+    app.get("/search/:account_id/:account_key", function(req,res){
         db.Accounts.findAll(where:{
-        	item_id: req.params.item_id,
+        	account_id: req.params.account_id,
   			account_key: req.params.account_key
-        }).then(function(dbItems){
-            res.json(dbItems);
+        }).then(function(dbAccounts){
+            res.json(dbAccounts);
         });
     });
 
