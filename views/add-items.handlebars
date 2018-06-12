@@ -10,19 +10,23 @@
 -- 	start_date datetime NOT NULL,
 -- 	end_date datetime NOT NULL,
 -- 	picture_link varchar(255) NOT NULL, --}}
+{{!-- 
 
+{{#each team}}
+<h1>{{this.team_name}}</h1>
 
+{{/each}} --}}
 
-<form>
+<form action="/items/add" method="POST">
   <div class="form-row">
     <div class="form-group col-md-6">
 
       <label for="inputItemName"</label>
-      <input type="text" class="form-control" id="inputItemName" placeholder="Name">
+      <input type="text" class="form-control" id="inputItemName" name="input_name" placeholder="Name">
     </div>
     <div class="form-group col-md-6">
       <label for="inputDescription">Description</label>
-      <input type="password" class="form-control" id="inputDescription" placeholder="Description">
+      <input type="password" class="form-control" id="inputDescription" name="input_description" placeholder="Description">
 
     </div>
   </div>
@@ -30,11 +34,11 @@
     <div class="form-group col-md-6">
 
       <label for="inputStart">Start Date</label>
-      <input type="text" class="form-control" id="inputEmail4" placeholder="Start Date">
+      <input type="text" class="form-control" id="inputStart" name="input_start" placeholder="Start Date">
     </div>
     <div class="form-group col-md-6">
       <label for="inputEnd">End Date</label>
-      <input type="text" class="form-control" id="inputEnd" placeholder="End Date">
+      <input type="text" class="form-control" id="inputEnd" name="input_end" placeholder="End Date">
 
     </div>
   </div>
@@ -42,11 +46,11 @@
     <div class="form-group col-md-6">
 
       <label for="inputPrice">Price</label>
-      <input type="text" class="form-control" id="inputPrice" placeholder="Price">
+      <input type="text" class="form-control" id="inputPrice" name="input_price" placeholder="Price">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Link to Photo</label>
-      <input type="image" class="form-control" id="inputPhoto" placeholder="Photo">
+      <input type="image" class="form-control" id="inputPhoto" name="input_photo" placeholder="Photo">
 
     </div>
   </div>
