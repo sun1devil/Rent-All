@@ -14,12 +14,22 @@ var db = require("./models");
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
+
+
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({defaultLayout: "main"}));
+app.set("view engine","handlebars");
+
 //TODO: To be enabled when public folder is created.
 app.use(express.static("public"));
 
-require("./controllers/account-controller.js")(app);
+require("./controllers/html-routes")(app);
+require("./controllers/account-controller")(app);
+require("./controllers/item-controller")(app);
+require("./controllers/search-controller")(app);
+require("./controllers/transactions-controller")(app);
+
 
 // require("./controllers/transaction-controller.js")(app);
 require("./controllers/html-routes.js")(app);
