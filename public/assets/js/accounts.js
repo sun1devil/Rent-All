@@ -1,26 +1,14 @@
 // Code here handles what happens when a user submits a new account.
 
-// -- 	first_name varchar(30) NOT NULL,
-// -- 	last_name varchar(30) NOT NULL,
-// -- 	street varchar(30) NOT NULL,
-// -- 	city varchar(30) NOT NULL,
-// -- 	state varchar(2) NOT NULL,
-// -- 	zip int(5) NOT NULL,
-// -- 	balance decimal(12,2) DEFAULT NULL,
-// -- 	email varchar(100) NOT NULL,
-// -- 	phone int NOT NULL,
-// -- 	rating decimal(3,2) DEFAULT NULL,
-// -- 	account_key varchar(8) NOT NULL,
-// -- 	PRIMARY KEY (id)
-// -- ); --}}
 
-
+console.log("Accounts.js loaded");
 
 
 // when user clicks add-btn
 $("#add-account").on("click", function (event) {
   event.preventDefault();
 
+  console.log("Entere'd add account button.")
   // make a newAccount obj
   var newAccount = {
     first_name: $("#inputFirst").val().trim(),
@@ -29,9 +17,7 @@ $("#add-account").on("click", function (event) {
     city: $("#inputCity").val().trim(),
     state: $("#inputState").val().trim(),
     zip: $("#inputZip").val().trim(),
-
     balance: $("#inputBalance").val().trim(),
-
     email: $("#inputEmail").val().trim(),
     phone: $("#inputPhone").val().trim(),
     rating: $("#inputRating").val().trim(),
@@ -39,28 +25,28 @@ $("#add-account").on("click", function (event) {
 
   // send an AJAX POST-request with jQuery
 
-  $.post("/accounts/new", newAccount)
-    // on success, run this callback
-    .then(function (data) {
-      // log the data we found
-      console.log(data);
-      $("#message").val("<h2> Account Added! </h2>");
-    });
+  // $.post("/accounts/new", newAccount)
+  //   // on success, run this callback
+  //   .then(function (data) {
+  //     // log the data we found
+  //     console.log(data);
+  //     $("#message").val("<h2> Account Added! </h2>");
+  //   });
 
   // empty each input box by replacing the value with an empty string
 
 
-  $("#inputFirst").val("")
-  $("#inputLast").val("")
-  $("inputStreet").val("")
-  $("#inputCity").val("")
-  $("#inputState").val("")
-  $("#inputZip").val("")
-  $("#inputBalance").val("")
-  $("#inputEmail").val("")
-  $("#inputPhone").val("")
-  $("#inputRating").val("")
-  $("#inputAccount").val("")
+  // $("#inputFirst").val("")
+  // $("#inputLast").val("")
+  // $("inputStreet").val("")
+  // $("#inputCity").val("")
+  // $("#inputState").val("")
+  // $("#inputZip").val("")
+  // $("#inputBalance").val("")
+  // $("#inputEmail").val("")
+  // $("#inputPhone").val("")
+  // $("#inputRating").val("")
+  // $("#inputAccount").val("")
 });
 
 

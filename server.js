@@ -31,10 +31,6 @@ require("./controllers/search-controller")(app);
 require("./controllers/transactions-controller")(app);
 
 
-// require("./controllers/transaction-controller.js")(app);
-require("./controllers/html-routes.js")(app);
-require("./controllers/item-controller.js")(app);
-
 db.sequelize.sync({force: true}).then(function(){
     app.listen(PORT, function(){
         console.log("Listening on localhost:" + PORT);
