@@ -1,6 +1,8 @@
+<h1> Rent All'Em Items</h1>
+
+<h2>Available Items to Rent Out Bruh:</h2>
 {{#each items}}
 {{#if available}}
-  <h2>Available Items to Rent Out Bruh:</h2>
     <div class="card avail" style="width: 18rem;">
     <img class="card-img-top" src={{image}} alt={{name}}>
     <div class="card-body">
@@ -11,8 +13,9 @@
     </div>
 
 {{/if}}
-{{#unless available}}
 <h2>U SOL man, these are unavailable:</h2>
+
+{{#unless available}}
   <div class="card unavail" style="width: 18rem;">
     <img class="card-img-top" src={{image}} alt={{name}}>
     <div class="card-body">
