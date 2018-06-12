@@ -32,6 +32,10 @@ module.exports = function(sequelize, DataTypes){
             validate: {
                 len:[1,255]
             }
+        },
+        available: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: 0
         }
 
     });
