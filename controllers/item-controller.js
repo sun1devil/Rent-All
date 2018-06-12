@@ -2,11 +2,13 @@
 var db = require("../models");
 
 module.exports = function (app) {
-    
+
+    //Brings to add-items form.
     app.get("/post-items/new", function (req, res) {
         res.render("add-items");
     });
 
+    //Posting item to item table.
     app.post("/post-items", function (req, res) {
         db.Items.create({
             item_name: req.body.item_name,
@@ -21,23 +23,47 @@ module.exports = function (app) {
         });
     });
 
-    app.put("/post-items/transactions/:account_id/:account_key", function (req, res) {
-        db.Items.update({
-            start_date: req.body.start_date
-        }, {
-                where: {
-                    id: req.params.account_id,
-                    account_key: req.params.account_key
-                }
-            }).then(function (result) {
-                if (result.changedRows == 0) {
-                    return res.status(404).end();
-                } else {
-                    res.status(200).end();
-                }
-            })
+    //Update the item's desceription etc...
+    app.get("/post-items/transactions/:account_id/:account_key/:item_id", function (req, res) {
+        db.Accounts.findOne({
+            where: {
+                id: req.params.account_id,
+                account_key: req.params.account_key
+            }
+        }).then(function (dbAccounts) {
+            console.log(dbAccounts);
+            // //IF confirmed then apply below.
+            // db.Items.update({
+            //     available: req.body.start_date
+            // }, {
+            //         where: {
+            //             id: req.params.item_id
+            //         }
+            //     }).then(function (result) {
+            //         if (result.changedRows == 0) {
+            //             return res.status(404).end();
+            //         } else {
+            //             res.status(200).end();
+            //         }
+            //     })
+
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
     });
 
+    //Delete an item.
     app.delete("/post-items/:item_id", function (req, res) {
         db.Items.destroy({
             where: {
