@@ -3,8 +3,8 @@
 // when user clicks add-btn
 $("#add-item").on("click", function (event) {
   event.preventDefault();
-  var account_id = $("#inputAccount").val().trim()
-  var account_key = $("#inputPassword").val().trim()
+  var account_id = $("#inputAccount").val().trim();
+  var account_key = $("#inputPassword").val().trim();
 
   // make a newAccount obj
   var newItem = {
@@ -28,11 +28,11 @@ $("#add-item").on("click", function (event) {
 
   // empty each input box by replacing the value with an empty string
 
-  $("#inputItemName").val(""),
-    $("#inputDescription").val(""),
-    $("inputStart").val(""),
-    $("#inputEnd").val(""),
-    $("#inputPrice").val(""),
-    $("#inputPhoto").val(""),
+    $("#inputItemName").val("")
+    $("#inputDescription").val("")
+    $("inputStart").val("")
+    $("#inputEnd").val("")
+    $("#inputPrice").val("")
+    $("#inputPhoto").val("")
   
   });
