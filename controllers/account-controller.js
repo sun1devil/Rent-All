@@ -6,21 +6,30 @@ module.exports = function (app) {
         res.render("accounts");
     });
 
+    app.get("/accounts/view", function (req, res) {
+        res.render("view-account");
+    });
+
     app.get("/accounts/view/:account_id/:account_key", function (req, res) {
+        console.log("Testing13")
         db.Accounts.findOne({
             where: {
                 id: req.params.account_id,
                 account_key: req.params.account_key
             }
         }).then(function (dbAccounts) {
-            var hbsObj = {
-                account: dbAccounts
-            }
-            res.render("view", hbsObj);
+            console.log("Testing21")
+            // var hbsObj = {
+            //     account: dbAccounts.dataValues
+            // }
+            // console.log(hbsObj);
+            res.render("view-account", dbAccounts)
+            // res.render("view-account", dbAccounts);
         });
     });
 
     app.post("/accounts/new", function (req, res) {
+
         db.Accounts.create({
             first_name: req.body.first_name,
             last_name: req.body.last_name,
@@ -30,9 +39,25 @@ module.exports = function (app) {
             zip: req.body.zip,
             balance: req.body.balance,
             email: req.body.email,
+            phone: req.body.phone,
             account_key: req.body.account_key
         }).then(function (dbAccounts) {
-            res.json(dbAccounts);
+            var account_id = dbAccounts["dataValues"]["id"];
+            var account_key = dbAccounts["dataValues"]["account_key"];
+            console.log(account_id);
+            console.log(account_key)
+            var acct = {
+                id: account_id,
+                key: account_key
+            }
+            // $.get("/accounts/view/" + account_id + "/" + account_key)
+            // res.render("home");
+            res.json(acct);
+            // res.render("/accounts/view/" + account_id + "/" + account_key)
+            // res.redirect("/accounts/view/" + account_id + "/" + account_key)
+           
+            // console.log("page has been redirected");
+            // res.json(dbAccounts);
         });
     });
 
