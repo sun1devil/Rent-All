@@ -1,0 +1,36 @@
+<h1> All dem transactions</h1>
+
+{{#each transactions}}
+    <div class="card avail" style="width: 18rem;">
+    <img class="card-img-top" src={{image}} alt={{name}}>
+    <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <p class="card-text">{{desciption}}</p>
+        <button data-id={{id}} class="rent-btn">RENT for {{price}}</button>
+    </div>
+    </div>
+{{/each}}
+
+{{!-- $(".rent-btn").on("click", function(){ --}}
+    {{!-- var itemID = $(this).attr("data-id"); --}}
+
+{{!-- }); --}}
+
+<header>
+  <h2>Search for transactions:</h2>
+</header>
+
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="forrent"> Item Name:</label>
+    <input type="text" id="forrent" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="rentedout">Account ID:</label><br>
+    <input type="text" id="forrent" name="name">
+  </div>
+
+  <button type="submit">Search for transaction</button>
+</form>

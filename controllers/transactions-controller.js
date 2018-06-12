@@ -2,6 +2,10 @@ var db = require("../models");
 
 module.exports = function(app){
 
+    app.get("/transactions/", function(req,res){
+        res.render("transactions");
+    });
+
 	app.get("/transactions/:account_id", function(req,res){
         db.Transactions.findAll({
             where: {
