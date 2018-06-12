@@ -37,7 +37,15 @@ module.exports = function(sequelize, DataTypes){
     });
 
     Items.associate = function(models){
-        Items.belongsTo(models.Accounts, {foreignKey: "owner_id"});
+        Items.belongsTo(models.Accounts, {
+            foreignKey: "owner_id"
+        });
+    }
+
+    Items.associate = function(models){
+        Items.hasMany(models.Transactions, {
+            foreignKey: "item_id"
+        })
     }
 
     return Items;
