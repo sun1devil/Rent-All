@@ -9,7 +9,7 @@ module.exports = function(app){
     });
 
     app.get("/search/:account_id/:account_key", function(req,res){
-        db.Accounts.findAll(where:{
+        db.Accounts.findAll({where:
         	account_id: req.params.account_id,
   			account_key: req.params.account_key
         }).then(function(dbAccounts){
