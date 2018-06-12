@@ -1,6 +1,9 @@
+<h1> Rent All'Em Items</h1>
+
+<h2>Available Items to Rent Out Bruh:</h2>
+
 {{#each items}}
 {{#if available}}
-  <h2>Available Items to Rent Out Bruh:</h2>
     <div class="card avail" style="width: 18rem;">
     <img class="card-img-top" src={{image}} alt={{name}}>
     <div class="card-body">
@@ -9,10 +12,13 @@
         <button data-id={{id}} class="rent-btn">RENT for {{price}}</button>
     </div>
     </div>
-
 {{/if}}
-{{#unless available}}
+{{/each}}
+
 <h2>U SOL man, these are unavailable:</h2>
+
+{{#each items}}
+{{#unless available}}
   <div class="card unavail" style="width: 18rem;">
     <img class="card-img-top" src={{image}} alt={{name}}>
     <div class="card-body">
@@ -29,22 +35,17 @@
 
 {{!-- }); --}}
 
+
 <header>
-  <h2>List of Items</h2>
+  <h2>Search for items:</h2>
 </header>
 
 <form class="create-form">
 
   <div class="form-group">
-    <label for="forrent">Item Name:</label>
+    <label for="forrent"> Item Name:</label>
     <input type="text" id="forrent" name="name">
   </div>
 
-  <div class="form-group">
-    <label for="rentedout">Unavailable</label><br>
-    {{!-- <input type="radio" name="sleepy" value="1" checked> Sleepy!<br> --}}
-    {{!-- <input type="radio" name="sleepy" value="0"> Awake --}}
-  </div>
-
-  <button type="submit">Select Item</button>
+  <button type="submit">Search for items</button>
 </form>

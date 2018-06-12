@@ -26,13 +26,26 @@ $("#add-account").on("click", function (event) {
 
   // send an AJAX POST-request with jQuery
 
-  $.post("/accounts/new", newAccount)
-    // on success, run this callback
-    .then(function (data) {
-      // log the data we found
-      console.log(data);
-      $("#message").val("<h2> Account Added! </h2>");
-    });
+  // $.post("/accounts/new", newAccount)
+  
+  //   // on success, run this callback
+  //   .then(function (data) {
+  //     // log the data we found
+  //     console.log(data);
+  //     $("#message").val("<h2> Account Added! </h2>");
+  //   });
+
+  $.ajax({
+    type: "post",
+    url: "/accounts/new",
+    data: newAccount
+  }).then(function (data) {
+    console.log(data)
+    window.location.href = "/accounts/view/"+ data.id +"/"+ data.key;
+    //     // log the data we found
+    //     console.log(data);
+    //     $("#message").val("<h2> Account Added! </h2>");
+    //   })
 
   // empty each input box by replacing the value with an empty string
 
@@ -49,6 +62,7 @@ $("#add-account").on("click", function (event) {
   // $("#inputRating").val("")
   // $("#inputAccount").val("")
 });
+})
 
 
 // $("#view-account").on("click", function () {
