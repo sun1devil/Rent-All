@@ -8,7 +8,7 @@ module.exports = function(app){
         res.render("query");
     });
 
-    app.get("/account", function(req,res){
+    app.get("/account/new", function(req,res){
         res.render("accounts");
     });
 
