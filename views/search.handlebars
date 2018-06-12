@@ -1,0 +1,26 @@
+{{#each items}}
+{{#if available}}
+    <div class="card avail" style="width: 18rem;">
+    <img class="card-img-top" src={{image}} alt={{name}}>
+    <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <p class="card-text">{{desciption}}</p>
+        <button data-id={{id}} class="rent-btn">RENT for {{price}}</button>
+    </div>
+    </div>
+{{#else}}
+  <div class="card unavail" style="width: 18rem;">
+    <img class="card-img-top" src={{image}} alt={{name}}>
+    <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <p class="card-text">{{desciption}}</p>
+        <button data-id={{id}} class="rent-btn disabled" disabled="true"><s>RENT for {{price}}</s></button>
+    </div>
+    </div>
+{{/if}}
+{{/each}}
+
+{{!-- $(".rent-btn").on("click", function(){ --}}
+    {{!-- var itemID = $(this).attr("data-id"); --}}
+
+{{!-- }); --}}
