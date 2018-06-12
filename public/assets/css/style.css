@@ -2,3 +2,15 @@ body {
     
     background-image:url("/assets/images/ladiesbike.jpg");
 }
+
+h1 {
+    text-align:center;
+
+}
+
+.btn {
+
+    position:relative/absolute;
+    left:50%;
+    
+}
