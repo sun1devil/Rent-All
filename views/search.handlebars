@@ -8,7 +8,8 @@
         <button data-id={{id}} class="rent-btn">RENT for {{price}}</button>
     </div>
     </div>
-{{#else}}
+{{/if}}
+{{#unless}}
   <div class="card unavail" style="width: 18rem;">
     <img class="card-img-top" src={{image}} alt={{name}}>
     <div class="card-body">
@@ -17,7 +18,7 @@
         <button data-id={{id}} class="rent-btn disabled" disabled="true"><s>RENT for {{price}}</s></button>
     </div>
     </div>
-{{/if}}
+{{/unless}}
 {{/each}}
 
 {{!-- $(".rent-btn").on("click", function(){ --}}
