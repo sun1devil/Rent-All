@@ -45,7 +45,7 @@ $("#add-account").on("click", function(event) {
     //     // log the data we found
     //     console.log(data);
     //     // tell the user we're adding a  with an alert window
-    //     alert("Adding ...");
+    $("#message").val("<h2> Account Added! </h2>");
     //   });
   
     // empty each input box by replacing the value with an empty string
@@ -66,8 +66,14 @@ $("#add-account").on("click", function(event) {
   
 
   $("#view-account").on("click", function() {
+    $("#account-info").modal("show");
+
+    
     // Save Account Search
-    var viewAccount = $("#InputAccount")
+    var passwordEntry= $("passwordEntry")
+    .val()
+    .trim();
+    var accountEntry = $("#accountEntry")
       .val()
       .trim();
   
@@ -77,7 +83,7 @@ $("#add-account").on("click", function(event) {
   
     // run an AJAX GET-request for our servers api,
     
-    $.get("/api/" + viewAccount, function(data) {
+    $.get("/api/" + accountEntry, + passwordEntry, function(data) {
       // log the data to our console
       console.log(data);
       // empty fields before adding new content
@@ -141,11 +147,11 @@ $("#add-account").on("click", function(event) {
     //     // log the data we found
     //     console.log(data);
     //     
-    //     alert("Changed account info ...");
+    //      $("#message").val("<h2> Account info changed. </h2>");
     //   });
   
     // empty each input box by replacing the value with an empty string
-    $("#message").val("<h2> Please enter a valid account number. </h2>");
+   
     
       $("#inputFirst").val("")
       $("#inputLast").val("")
