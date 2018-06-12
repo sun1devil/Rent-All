@@ -13,25 +13,26 @@ $("#add-account").on("click", function (event) {
   var newAccount = {
     first_name: $("#inputFirst").val().trim(),
     last_name: $("#inputLast").val().trim(),
-    street: $("inputStreet").val().trim(),
+    street: $("#inputStreet").val().trim(),
     city: $("#inputCity").val().trim(),
     state: $("#inputState").val().trim(),
     zip: $("#inputZip").val().trim(),
     balance: $("#inputBalance").val().trim(),
     email: $("#inputEmail").val().trim(),
     phone: $("#inputPhone").val().trim(),
-    rating: $("#inputRating").val().trim(),
+    account_key: $("#inputPassword").val().trim()
+    
   };
 
   // send an AJAX POST-request with jQuery
 
-  // $.post("/accounts/new", newAccount)
-  //   // on success, run this callback
-  //   .then(function (data) {
-  //     // log the data we found
-  //     console.log(data);
-  //     $("#message").val("<h2> Account Added! </h2>");
-  //   });
+  $.post("/accounts/new", newAccount)
+    // on success, run this callback
+    .then(function (data) {
+      // log the data we found
+      console.log(data);
+      $("#message").val("<h2> Account Added! </h2>");
+    });
 
   // empty each input box by replacing the value with an empty string
 
