@@ -27,7 +27,8 @@ $("#add-item").on("click", function (event) {
   });
 
   // empty each input box by replacing the value with an empty string
-
+  
+    $("#inputItemName").val("")
     $("#inputItemName").val("")
     $("#inputDescription").val("")
     $("inputStart").val("")
