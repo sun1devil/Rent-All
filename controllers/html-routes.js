@@ -5,7 +5,7 @@ module.exports = function(app){
     })
 
     app.get("/list-items", function(req,res){
-        res.render("query");
+        res.render("search");
     });
 
     app.get("/account/new", function(req,res){

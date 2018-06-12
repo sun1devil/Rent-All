@@ -3,9 +3,7 @@ var db = require("../models");
 module.exports = function(app){
 
     app.get("/search/", function(req,res){
-        db.Items.findAll({}).then(function(dbItems){
-            res.json(dbItems);
-        });
+        res.render("search");
     });
 
     app.get("/search/:account_id/:account_key", function(req,res){

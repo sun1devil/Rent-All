@@ -31,7 +31,7 @@ require("./controllers/search-controller")(app);
 require("./controllers/transactions-controller")(app);
 
 
-db.sequelize.sync({force: true}).then(function(){
+db.sequelize.sync().then(function(){
     app.listen(PORT, function(){
         console.log("Listening on localhost:" + PORT);
     })
