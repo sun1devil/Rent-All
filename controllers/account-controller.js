@@ -2,6 +2,10 @@ var db = require("../models");
 
 module.exports = function (app) {
 
+    app.get("/accounts/new", function (req, res) {
+        res.render("accounts");
+    });
+
     app.get("/accounts/view/:account_id/:account_key", function (req, res) {
         db.Accounts.findOne({
             where: {
