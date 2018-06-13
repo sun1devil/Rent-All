@@ -18,12 +18,14 @@ module.exports = function (app) {
                 account_key: req.params.account_key
             }
         }).then(function (dbAccounts) {
+
             console.log("Testing21")
             // var hbsObj = {
             //     account: dbAccounts.dataValues
             // }
             // console.log(hbsObj);
-            res.render("view-account", dbAccounts)
+            res.render("view-account")
+            // res.render("view-account", dbAccounts)
             // res.render("view-account", dbAccounts);
         });
     });
@@ -42,6 +44,7 @@ module.exports = function (app) {
             phone: req.body.phone,
             account_key: req.body.account_key
         }).then(function (dbAccounts) {
+            console.log(dbAccounts.dataValues);
             var account_id = dbAccounts["dataValues"]["id"];
             var account_key = dbAccounts["dataValues"]["account_key"];
             console.log(account_id);
@@ -53,7 +56,6 @@ module.exports = function (app) {
             // $.get("/accounts/view/" + account_id + "/" + account_key)
             // res.render("home");
             res.json(acct);
-            // res.render("/accounts/view/" + account_id + "/" + account_key)
             // res.redirect("/accounts/view/" + account_id + "/" + account_key)
            
             // console.log("page has been redirected");
