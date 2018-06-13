@@ -1,3 +1,7 @@
+<h1> Rent All'Em Items</h1>
+
+<h2>Available Items to Rent Out Bruh:</h2>
+
 {{#each items}}
 {{#if available}}
     <div class="card avail" style="width: 18rem;">
@@ -8,7 +12,13 @@
         <button data-id={{id}} class="rent-btn">RENT for {{price}}</button>
     </div>
     </div>
-{{!-- {{#else}} --}}
+{{/if}}
+{{/each}}
+
+<h2>U SOL man, these are unavailable:</h2>
+
+{{#each items}}
+{{#unless available}}
   <div class="card unavail" style="width: 18rem;">
     <img class="card-img-top" src={{image}} alt={{name}}>
     <div class="card-body">
@@ -17,10 +27,25 @@
         <button data-id={{id}} class="rent-btn disabled" disabled="true"><s>RENT for {{price}}</s></button>
     </div>
     </div>
-{{/if}}
+{{/unless}}
 {{/each}}
 
 {{!-- $(".rent-btn").on("click", function(){ --}}
     {{!-- var itemID = $(this).attr("data-id"); --}}
 
 {{!-- }); --}}
+
+
+<header>
+  <h2>Search for items:</h2>
+</header>
+
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="forrent"> Item Name:</label>
+    <input type="text" id="forrent" name="name">
+  </div>
+
+  <button type="submit">Search for items</button>
+</form>

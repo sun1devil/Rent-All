@@ -10,7 +10,7 @@ $("#add-item").on("click", function (event) {
   var newItem = {
     item_name: $("#inputItemName").val().trim(),
     description: $("#inputDescription").val().trim(),
-    start_date: $("inputStart").val().trim(),
+    start_date: $("#inputStart").val().trim(),
     end_date: $("#inputEnd").val().trim(),
     price: $("#inputPrice").val().trim(),
     picture_link: $("#inputPhoto").val().trim(),
@@ -27,7 +27,8 @@ $("#add-item").on("click", function (event) {
   });
 
   // empty each input box by replacing the value with an empty string
-
+  
+    $("#inputItemName").val("")
     $("#inputItemName").val("")
     $("#inputDescription").val("")
     $("inputStart").val("")

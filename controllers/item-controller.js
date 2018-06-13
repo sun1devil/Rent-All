@@ -11,28 +11,31 @@ module.exports = function (app) {
     //Posting item to item table.
     app.post("/post-items/:account_id/:account_key", function (req, res) {
 
-        db.Accounts.findOne({
-            where: {
-                id: req.params.account_id,
-                account_key: req.params.account_key
-            }
-        }).then(function (dbAccounts) {
-            console.log(dbAccounts);
+        // db.Accounts.findOne({
+        //     where: {
+        //         id: req.params.account_id,
+        //         account_key: req.params.account_key
+        //     }
+        // }).then(function (dbAccounts) {
+        //     console.log(dbAccounts);
             // res.json(dbAccounts);
- 
-        // db.Items.create({
-        //     item_name: req.body.item_name,
-        //     description: req.body.description,
-        //     price: req.body.price,
-        //     start_date: req.body.start_date,
-        //     end_date: req.body.end_date,
-        //     picture_link: req.body.picture_link,
-        //     owner_id: req.body.owner_id
-        // }).then(function (dbItems) {
-        //     res.json(dbItems);
+
+            db.Items.create({
+                item_name: req.body.item_name,
+                description: req.body.description,
+                price: req.body.price,
+                start_date: req.body.start_date,
+                end_date: req.body.end_date,
+                picture_link: req.body.picture_link,
+                owner_id: req.body.owner_id
+            }).then(function (dbItems) {
+                res.json(dbItems);
+            });
+
         // });
     });
-});
+
+
 
     //Update the item's desceription etc...
     app.get("/post-items/transactions/:account_id/:account_key/:item_id", function (req, res) {
