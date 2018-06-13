@@ -1,73 +1,64 @@
-<header>
-  <h1>Add an item to share</h1>
-</header>
+<div class="container">
+
+  <header class="text-center">
+    <h1>Add an item to share</h1>
+  </header>
 
 
+  <div class="row justify-content-center">
+    <form class="col-md-6 mx-0">
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label class="" for="inputItemName">Item Name </label>
+          <input type="text" class="form-control" id="inputItemName" name="input_name" placeholder="Name">
+        </div>
+      </div>
 
-{{!-- name varchar(60) NOT NULL, 
--- 	description varchar(255) NOT NULL,
--- 	price decimal(8,2) DEFAULT NULL,
--- 	start_date datetime NOT NULL,
--- 	end_date datetime NOT NULL,
--- 	picture_link varchar(255) NOT NULL, --}}
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label id="photoLabel" class="" for="inputPhoto">Link to Photo</label>
+          <input type="text" class="form-control" id="inputPhoto" name="input_photo" placeholder="Photo.png">
+        </div>
+      </div>
 
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputPrice">Price</label>
+          <input type="text" class="form-control" id="inputPrice" name="input_price" placeholder="Price">
+        </div>
 
+        <div class="form-group col-md-4">
+          <label for="inputStart">Start Date</label>
+          <input type="date" class="form-control" id="inputStart" name="input_start" placeholder="Start Date">
+        </div>
 
+        <div class="form-group col-md-4">
+          <label for="inputEnd">End Date</label>
+          <input type="date" class="form-control" id="inputEnd" name="input_end" placeholder="End Date">
+        </div>
+      </div>
 
-<form >
-  <div class="form-row">
-    <div class="form-group col-md-6">
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="inputDescription">Description</label>
+          <textarea type="text" class="form-control" id="inputDescription" name="input_description" placeholder="Description" rows="3"></textarea>
+        </div>
+      </div>
 
-      <label for="inputItemName">Item Name</label>
-      <input type="text" class="form-control" id="inputItemName" name="input_name" placeholder="Name">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputDescription">Description</label>
-      <input type="text" class="form-control" id="inputDescription" name="input_description" placeholder="Description">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputAccount">Account</label>
+          <input type="text" class="form-control" id="inputAccount" name="input_account" placeholder="Account">
+        </div>
 
-    </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword">Password</label>
+          <input type="password" class="form-control" id="inputPassword" name="input_password" placeholder="Password">
+        </div>
+      </div>
+
+      <button type="submit" id="add-item" class="btn btn-primary">SHARE</button>
+
+    </form>
   </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-
-      <label for="inputStart">Start Date</label>
-      <input type="date" class="form-control" id="inputStart" name="input_start" placeholder="Start Date">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputEnd">End Date</label>
-      <input type="date" class="form-control" id="inputEnd" name="input_end" placeholder="End Date">
-
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-
-      <label for="inputPrice">Price</label>
-      <input type="text" class="form-control" id="inputPrice" name="input_price" placeholder="Price">
-    </div>
-    <div class="form-group col-md-6">
-      <label id="photoLabel" for="inputPhoto">Link to Photo</label>
-      <input type="text" class="form-control" id="inputPhoto" name="input_photo" placeholder="Photo.png">
-      <small id="imageNote" class="form-text text-muted">Accepted file formats: .jpg, .jpeg, .gif, .png</small>
-    </div>
-  </div>
-
-   <div class="form-row">
-    <div class="form-group col-md-6">
-
-      <label for="inputAccount">Account</label>
-      <input type="text" class="form-control" id="inputAccount" name="input_account" placeholder="Account">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword">Password</label>
-      <input type="password" class="form-control" id="inputPassword" name="input_password" placeholder="Password">
-
-    </div>
-  </div>
-    
-   
-    
-
-  <button type="submit" id="add-item" class="btn btn-primary">SHARE</button>
-
-</form>
+</div>
