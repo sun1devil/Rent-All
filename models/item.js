@@ -35,7 +35,7 @@ module.exports = function(sequelize, DataTypes){
         },
         available: {
             type: DataTypes.BOOLEAN,
-            defaultValue: 1
+            defaultValue: true
         }
 
     });

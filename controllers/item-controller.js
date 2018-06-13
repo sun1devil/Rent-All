@@ -35,8 +35,23 @@ module.exports = function (app) {
         // });
     });
 
+    app.put("/post-items/:item_id", function(req, res){
+        db.Items.update({
+            availability: req.body.availability
+        }, {
+            where:{
+                id: id_req.params.item_id
+            }
+        }).then(function (result){
+            if (result.affectedRows == 0) {
+                return res.status(404).end();
+            } else {
+                res.status(200).end();
+            }
 
-
+        })
+    })
+            
     //Update the item's desceription etc...
     app.get("/post-items/transactions/:account_id/:account_key/:item_id", function (req, res) {
         db.Accounts.findOne({
@@ -63,25 +78,13 @@ module.exports = function (app) {
 
         })
 
-
-
-
-
-
-
-
-
-
-
-
-
     });
 
     //Delete an item.
     app.delete("/post-items/:item_id", function (req, res) {
         db.Items.destroy({
             where: {
-                id: req.params.item_id,
+                id: req.params.item_id
             }
         }).then(function (result) {
             if (result.affectedRows == 0) {
@@ -91,7 +94,5 @@ module.exports = function (app) {
             }
         })
     });
-
-
 }
 
