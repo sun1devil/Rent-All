@@ -1,7 +1,8 @@
 body {
     
-    background-image:url("/assets/images/ladiesbike.jpg");
+    background:url("/assets/images/ladiesbike.jpg") no-repeat center fixed;
     color: white;
+    background-size: cover;
 }
 
 .jumbotron {
@@ -45,4 +46,11 @@ body {
     background-color:orange;
     border-color: orange; 
     color: black;
+}
+
+#account-form, .header-wrap {
+    background: rgba(0,0,0,.7);
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
 }
