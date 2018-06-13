@@ -21,19 +21,9 @@ $("#add-account").on("click", function (event) {
     email: $("#inputEmail").val().trim(),
     phone: $("#inputPhone").val().trim(),
     account_key: $("#inputPassword").val().trim()
-    
+
   };
 
-  // send an AJAX POST-request with jQuery
-
-  // $.post("/accounts/new", newAccount)
-  
-  //   // on success, run this callback
-  //   .then(function (data) {
-  //     // log the data we found
-  //     console.log(data);
-  //     $("#message").val("<h2> Account Added! </h2>");
-  //   });
 
   $.ajax({
     type: "post",
@@ -41,27 +31,23 @@ $("#add-account").on("click", function (event) {
     data: newAccount
   }).then(function (data) {
     console.log(data)
-    window.location.href = "/accounts/view/"+ data.id +"/"+ data.key;
-    //     // log the data we found
-    //     console.log(data);
-    //     $("#message").val("<h2> Account Added! </h2>");
-    //   })
-
-  // empty each input box by replacing the value with an empty string
+    window.location.href = "/accounts/view/" + data.id + "/" + data.key;
+  });
 
 
-  // $("#inputFirst").val("")
-  // $("#inputLast").val("")
-  // $("inputStreet").val("")
-  // $("#inputCity").val("")
-  // $("#inputState").val("")
-  // $("#inputZip").val("")
-  // $("#inputBalance").val("")
-  // $("#inputEmail").val("")
-  // $("#inputPhone").val("")
-  // $("#inputRating").val("")
-  // $("#inputAccount").val("")
-});
+
+  // $.ajax("/accounts/new", {
+  //   type: "POST",
+  //   data: newAccount
+  // }).then(function () {
+  //   // console.log("creating new pokemon");
+  //   // location.reload();
+  // })
+
+
+
+
+
 })
 
 
@@ -141,11 +127,11 @@ $("#update-account").on("click", function (event) {
 
   $.put("/accounts/:account_id/:account_key", changeAccount)
 
-    .then(function(data) {
+    .then(function (data) {
       // log the data we found
       console.log(data);
-      
-       $("#view-message").val("<h2> Account info changed. </h2>");
+
+      $("#view-message").val("<h2> Account info changed. </h2>");
     });
 
   // empty each input box by replacing the value with an empty string
