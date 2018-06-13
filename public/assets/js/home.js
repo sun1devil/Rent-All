@@ -6,9 +6,10 @@
 $("#search-item").on("click", function (event) {
   event.preventDefault();
 
-  console.log("Entering search")
-
-  window.location.href = "/search/"
+  $("#search-item").animateCss('hinge', function () {
+    //callback (things to do after all animations are done)
+    window.location.href = "/search/"
+  });
 
 });
 
@@ -16,16 +17,16 @@ $("#search-item").on("click", function (event) {
 $("#post-item").on("click", function (event) {
   event.preventDefault();
 
-  console.log("Entering search")
-
-  window.location.href = "/post-items/new"
-  
+  $("#post-item").animateCss('hinge', function () {
+    window.location.href = "/post-items/new"
+  });
 });
+
+
 $("#sign-up").on("click", function (event) {
   event.preventDefault();
 
-  console.log("Entering search")
-
-  window.location.href = "/accounts/new"
-  
+  $("#sign-up").animateCss('hinge', function () {
+    window.location.href = "/accounts/new"
+  });
 });
