@@ -149,3 +149,7 @@ $("#update-account").on("click", function (event) {
   // $("#inputRating").val("")
   // $("#inputAccount").val("")
 });
+
+
+
+$(document).on("click", "delete-account", deleteAccount);
