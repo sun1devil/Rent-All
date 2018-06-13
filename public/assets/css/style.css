@@ -42,16 +42,22 @@ body {
     color: black;
 }
 
-#account-form, .header-wrap {
-    background: rgba(0,0,0,.7);
-    padding: 20px;
-    border-radius: 5px;
-    margin: 20px 0;
+.cards-wrap {
+    margin-top: 10%;
+}
+.item-card {
+    position: relative;
+    color: #000;
+}
+.price-wrap {
+    position: absolute;
+    right: -20px;
+    top: -17px;
+    width: 60px;
+    height: 60px;
+    background-color: lightsteelblue;
+    border-radius: 100%;
+    padding-top: 17px;
+    color: yellow;
 }
 
-#create-form, .create-acct-wrap {
-    background: rgba(0,0,0,.7);
-    padding: 20px;
-    border-radius: 5px;
-    margin: 20px 0;
-}
