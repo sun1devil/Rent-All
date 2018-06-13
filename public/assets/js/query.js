@@ -1,4 +1,5 @@
-$(function () {
+console.log("Query.js loaded");
+
     $(".change-rent").on("click", function(event) {
         event.preventDefault();
 
@@ -10,7 +11,7 @@ $(function () {
       };
 
       // Send the PUT request.
-      $.ajax("/post-items/" + id, {
+      $.ajax("/post-items/update" + id, {
         type: "PUT",
         data: newRentState
       }).then(
@@ -21,4 +22,3 @@ $(function () {
         }
       );
     });
-})

@@ -28,3 +28,21 @@ body {
     justify-content:center;
     align-items:center;
 }
+
+#rentModal{
+    background-color:black;
+    opacity:0.6;
+    border-color: black;
+    text-align: center;
+    color: white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+#rentModalFooter{
+    background-color:orange;
+    border-color: orange; 
+    color: black;
+}
