@@ -30,3 +30,22 @@ $("#sign-up").on("click", function (event) {
     window.location.href = "/accounts/new"
   });
 });
+
+
+$("#sign-in-modal").on("click", function (event) {
+  event.preventDefault();
+
+  $("#account-info").modal("show");
+});
+
+
+
+$("#sign-in").on("click", function (event) {
+  event.preventDefault();
+  var account_id = $("#account_id").val();
+  var account_password = $("#account_password").val();
+  
+  window.location.href = "/accounts/view/" + account_id + "/" + account_password
+
+
+});

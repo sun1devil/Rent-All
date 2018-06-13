@@ -4,10 +4,13 @@ body {
     color: white;
 }
 
-h1 {
-    text-align:center;
-    color: white;
+.jumbotron {
+    background-color: rgba(0, 0, 0, 0.274);
+    color:white;
+}
 
+.modal {
+    color: black;
 }
 
 .btn {
