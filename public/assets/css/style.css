@@ -18,6 +18,13 @@ body {
     position:relative/absolute;
     left:50%;
     color:black;
-    
 }
 
+.itemsRent{
+    width: 23rem;
+    background:lightblue; 
+    opacity:0.7; 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
