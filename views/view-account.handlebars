@@ -7,39 +7,40 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputFirst">First Name</label>
-      <input type="text" class="form-control" id="inputFirst" placeholder= "{{first_name}}">
+      <input type="text" class="form-control" id="inputFirst" value="{{first_name}}" placeholder="FirstName">
     </div>
+
     <div class="form-group col-md-6">
       <label for="inputLast">Last Name</label>
-      <input type="text" class="form-control" id="inputLast" placeholder= "{{last_name}}""LastName">
+      <input type="text" class="form-control" id="inputLast" value="{{last_name}}" placeholder="LastName">
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail">Email</label>
-      <input type="email" class="form-control" id="inputEmail" placeholder= "{{email}}""Email">
+      <input type="email" class="form-control" id="inputEmail" value="{{email}}" placeholder="Email">
     </div>
+
     <div class="form-group col-md-6">
       <label for="inputPhone">Phone</label>
-
-      <input type="text" class="form-control" id="inputPhone" placeholder= "{{phone}}">
+      <input type="text" class="form-control" id="inputPhone" value="{{phone}}" placeholder="4155551234">
     </div>
   </div>
 
   <div class="form-group">
     <label for="inputStreet">Street</label>
-    <input type="text" class="form-control" id="inputStreet" placeholder= "{{street}}">
+    <input type="text" class="form-control" id="inputStreet" value="{{street}}" placeholder="1234 Maple St">
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity"  placeholder= "{{city}}">>
+      <input type="text" class="form-control" id="inputCity" value="{{city}}" placeholder="Sweet City">
     </div>
     <div class="form-group col-md-4">
       <label for="inputState">State</label>
-      <select id="inputState" class="form-control"  placeholder= "{{state}}">
+      <select id="inputState" class="form-control" value="{{state}}">
         <option selected>Choose...</option>
         <option value="AL">Alabama</option>
         <option value="AK">Alaska</option>
@@ -97,64 +98,28 @@
 
     <div class="form-group col-md-2">
       <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip" placeholder= "{{zip}}">
+      <input type="text" class="form-control" id="inputZip" value="{{zip}}" placeholder="12345">
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputBalance">Balance</label>
-      <input type="text" class="form-control" id="inputBalance" placeholder= "{{balance}}">
+      <input type="text" class="form-control" id="inputBalance" value="{{balance}}" placeholder="N/A">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputPassword">Password</label>
-      <input type="password" class="form-control" id="inputPassword" placeholder= "{{account_key}}">
+      <input type="password" class="form-control" id="inputPassword" value="{{account_key}}">
     </div>
   </div>
 
-    
-    <div>
-    <h2 id="view-message"></h2>
-  </div>
 
+  <p>
+    <button type="submit" id="view-account" class="btn btn-primary">VIEW</button>
+    <button type="submit" id="update-account" class="btn btn-primary">UPDATE</button>
+    <button type="submit" id="delete-account" class="btn btn-primary">DELETE</button>
+  </p>
 
-
-{{!-- <div class="modal" id= "account-info" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Credentials</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        
-    <div class="form-group col-md-2">
-      <label for="inputAccount">Account#</label>
-      <input type="text" class="form-control" id="accountEntry">
-    </div>  
-     <div class="form-group col-md-2">
-      <label for="inputAccount">Password#</label>
-      <input type="password" class="form-control" id="passwordEntry">
-    </div>
-
-      </div>
-      <div class="modal-footer"> --}}
-        {{!-- <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div> --}}
-</div>
-
-
-<p>
-	
-
-    <button type="submit" id= "view-account" class="btn btn-primary">VIEW</button>
-    <button type="submit" id= "update-account" class="btn btn-primary">UPDATE</button>
-    <button type="submit" id= "delete-account" class="btn btn-primary">DELETE</button>
-</p>
+</form>
