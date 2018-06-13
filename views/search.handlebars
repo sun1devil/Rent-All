@@ -1,117 +1,48 @@
-<div class="container" align="center">
-    <h1>Rent Everything</h1>
+<h1>Rent Everything</h1>
 
+<h2>Available Items for Rent:</h2>
 
-{{!-- <div class="col-md-6 mx-0">
-    <h2>Available Items for Rent:</h2>
-<div class="row cards-wrap">
-     <div class="col-md-12">
-        <div class="card item-card" style="width: 18rem;">
-            <img class="card-img-top" src="https://media.zigcdn.com/media/model/2016/Sep/fottune_420x210.jpg" alt="Car">
-                <div class="card-body">
-                <h5 class="card-title">car</h5>
-                <p class="card-text">suv</p>
-            <button class="btn">rent now</button>
-            </div>
-            <div class="price-wrap">$12/hr</div>
-        </div>
-    </div>
-
-     --}}
-
-    {{#each items}}
-    {{#if available}}
-    <h2>Available Items for Rent:</h2>
-    <div class="col-md-6">
-        <div class="card item-card" style="width: 18rem;">
-            <img class="card-img-top" src={{picture_link}} alt="item for rent">
-            <div class="card-body">
-                <h5 class="card-title">{{item_name}}</h5>
-                <p class="card-text">{{description}}</p>
-            <button>rent now</button>
-            </div>
-            <div class="price-wrap">{{price}}</div>
-        </div>
-    </div>
-    {{/if}}
-    {{/each}}
-</div>
-   
-</div>
-</div>
-
-
-
-{{!-- <div class="container">
-
-
-{{#each items}}
-
-    {{> Query/query-block}}
-{{/if}}
-{{/each}}
+{{#each items}} {{#if available}} {{> Query/query-block}} {{/if}} {{/each}}
 
 <h2>Unavailable (Currently Rented Out by Others):</h2>
 
-{{#each items}}
-{{#unless available}}
-    {{> Query/query-block}}
-{{/unless}}
-{{/each}}
+{{#each items}} {{#unless available}} {{> Query/query-block}} {{/unless}} {{/each}}
 
-
-<div class="form-row">
-       
-
-
-</div> --}}
-{{!-- <div class="modal" id="rentModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Rent Out Selected Item</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+<div class="modal" id="rentModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Rent Out this Item</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputStart">Start Date</label>
+              <input type="date" class="form-control" id="transaction_Start" name="inputStart" placeholder="Start Date">
             </div>
-            <div class="modal-body">
-              <div>
-                <h4>{{item_name}}</h4>
-                <img src="{{picture_link}}">
-                <p>Price: {{price}}</p>
-                <p>Owner: {{owner_id}}</p>
-                <p>Description:{{description}}</p>
-              </div>
-              <form>
-                  <div class="form-row">
-                      <div class="form-group col-md-6">
-                          <label for="inputStart">Start Date</label>
-                          <input type="date" class="form-control" id="transaction_Start" name="transaction_start" placeholder="Start Date">
-                      </div>
-                      <div class="form-group col-md-6">
-                          <label for="inputEnd">End Date</label>
-                          <input type="date" class="form-control" id="transaction_End" name="transaction_end" placeholder="End Date">
-                      </div>
-                  </div>
-              </form>
+            <div class="form-group col-md-6">
+              <label for="inputEnd">End Date</label>
+              <input type="date" class="form-control" id="transaction_End" name="inputEnd" placeholder="End Date">
             </div>
+          </div>
+        </form>
+      </div>
 
-            <div class="modal-footer">
-                <button id="submitRent" data-id="{{id}}" type="button" class="btn btn-primary">Rent</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
+      <div class="modal-footer">
+        <button id="submitRent" data-id="{{id}}" type="button" class="btn btn-primary">Rent</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
     </div>
-</div> --}}
+  </div>
+</div>
 
 
 
-{{!-- $(".rent-btn").on("click", function(){ --}}
-    {{!-- var itemID = $(this).attr("data-id"); --}}
-
-{{!-- }); --}}
-
-{{!-- 
+{{!-- $(".rent-btn").on("click", function(){ --}} {{!-- var itemID = $(this).attr("data-id"); --}} {{!-- }); --}} {{!--
 <header>
   <h2>Search for items:</h2>
 </header>

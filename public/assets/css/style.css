@@ -1,7 +1,8 @@
 body {
     
-    background-image:url("/assets/images/ladiesbike.jpg");
+    background:url("../Images/ladiesbike.jpg") no-repeat center fixed;
     color: white;
+    background-size: cover;
 }
 
 .jumbotron {
@@ -30,15 +31,9 @@ body {
 }
 
 #rentModal{
-    background-color:black;
     opacity:0.6;
-    border-color: black;
     text-align: center;
-    color: white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
+    color: gray;
 }
 
 #rentModalFooter{
@@ -46,6 +41,7 @@ body {
     border-color: orange; 
     color: black;
 }
+
 .cards-wrap {
     margin-top: 10%;
 }
@@ -64,3 +60,4 @@ body {
     padding-top: 17px;
     color: yellow;
 }
+

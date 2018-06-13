@@ -1,9 +1,7 @@
-// var fs = require('fs');
-// console.log(process.env.SEQUELIZE_USER);
-// console.log(process.env.SEQUELIZE_PASSWORD);
-// console.log(process.env.SEQUELIZE_HOST);
+var connection;
 
-module.exports = {
+
+connection = {
   "development": {
     "username": process.env.SEQUELIZE_USER,
     "password": process.env.SEQUELIZE_PASSWORD,
@@ -19,10 +17,9 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "password",
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }
+
+module.exports = connection;

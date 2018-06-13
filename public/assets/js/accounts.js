@@ -24,16 +24,18 @@ $("#add-account").on("click", function (event) {
 
   };
 
-
-  $.ajax({
-    type: "post",
-    url: "/accounts/new",
-    data: newAccount
-  }).then(function (data) {
-    console.log(data)
-    window.location.href = "/accounts/view/" + data.id + "/" + data.key;
-  });
-
+  if(newAccount.first_name.length > 0 && newAccount.first_name.length > 0){
+    $.ajax({
+      type: "post",
+      url: "/accounts/new",
+      data: newAccount
+    }).then(function (data) {
+      console.log(data)
+      window.location.href = "/accounts/view/" + data.id + "/" + data.key;
+    });
+   
+  }
+ 
 
 
   // $.ajax("/accounts/new", {
@@ -152,4 +154,37 @@ $("#update-account").on("click", function (event) {
 
 
 
-// $(document).on("click", "delete-account", deleteAccount);
+$("#delete-account").on("click", function (event) {
+  event.preventDefault();
+  $("#err-msg").empty("");
+  $("#delete-account-modal").modal("show");
+});
+
+$("#confirm-delete").on("click", function(event) {
+  var deleteAccount = {
+    account_id: $("#account_id").val().trim(),
+    account_key: $("#account_password").val().trim(),
+    }
+    console.log(deleteAccount);
+    if(deleteAccount.account_id.length >0 && deleteAccount.account_key.length>0){
+      $.ajax("/accounts/"+ deleteAccount.account_id +"/"+ deleteAccount.account_key, {
+        type: "DELETE"
+      }).then(
+        function(){
+          console.log("deleted account", deleteAccount.account_id);
+          // Reload the page to get the updated list
+          location.reload();
+        }
+      );
+    }else {
+      console.log("fill out entire form");
+      $("#err-msg").empty("").text("fill out entire form");
+    }
+   
+  });
+  
+  
+
+ 
+
+
