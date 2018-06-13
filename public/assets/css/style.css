@@ -1,6 +1,6 @@
 body {
     
-    background:url("/assets/images/ladiesbike.jpg") no-repeat center fixed;
+    background:url("../Images/ladiesbike.jpg") no-repeat center fixed;
     color: white;
     background-size: cover;
 }
@@ -31,13 +31,9 @@ body {
 }
 
 #rentModal{
-    background-color:black;
     opacity:0.6;
-    border-color: black;
     text-align: center;
-    color: white;
-   
-
+    color: gray;
 }
 
 #rentModalFooter{
