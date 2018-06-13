@@ -4,7 +4,7 @@
 console.log("Accounts.js loaded");
 
 
-// when user clicks add-btn
+// ADD    ****************
 $("#add-account").on("click", function (event) {
   event.preventDefault();
 
@@ -24,7 +24,7 @@ $("#add-account").on("click", function (event) {
 
   };
 
-  if(newAccount.first_name.length > 0 && newAccount.first_name.length > 0){
+  if (newAccount.first_name.length > 0 && newAccount.first_name.length > 0) {
     $.ajax({
       type: "post",
       url: "/accounts/new",
@@ -33,81 +33,9 @@ $("#add-account").on("click", function (event) {
       console.log(data)
       window.location.href = "/accounts/view/" + data.id + "/" + data.key;
     });
-   
   }
- 
-
-
-  // $.ajax("/accounts/new", {
-  //   type: "POST",
-  //   data: newAccount
-  // }).then(function () {
-  //   // console.log("creating new pokemon");
-  //   // location.reload();
-  // })
-
-
-
-
-
 })
-
-
-// $("#view-account").on("click", function () {
-//   $("#account-info").modal("show");
-
-
-//   // Save Account Search
-//   var passwordEntry = $("passwordEntry")
-//     .val()
-//     .trim();
-//   var accountEntry = $("#accountEntry")
-//     .val()
-//     .trim();
-
-//   // Using a RegEx Pattern to remove spaces from searchedAccount
-//   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-//   viewAccount = viewAccount.replace(/\s+/g, "").toLowerCase();
-
-//   // run an AJAX GET-request for our servers api,
-
-//   $.get("/api/" + accountEntry, + passwordEntry, function (data) {
-//     // log the data to our console
-//     console.log(data);
-//     // empty fields before adding new content
-//     $("#inputFirst").val("")
-//     $("#inputLast").val("")
-//     $("inputStreet").val("")
-//     $("#inputCity").val("")
-//     $("#inputState").val("")
-//     $("#inputZip").val("")
-//     $("#inputBalance").val("")
-//     $("#inputEmail").val("")
-//     $("#inputPhone").val("")
-//     $("#inputRating").val("")
-
-//     // if the data is not there, then return an error message
-//     if (!data) {
-//       $("#message").val("<h2> Please enter a valid account number. </h2>");
-//     }
-//     else {
-//       // append the account info
-//       $("#inputFirst").val(first_name)
-//       $("#inputLast").val(last_name)
-//       $("inputStreet").val(street)
-//       $("#inputCity").val(city)
-//       $("#inputState").val(state)
-//       $("#inputZip").val(zip)
-//       $("#inputBalance").val(balance)
-//       $("#inputEmail").val(email)
-//       $("#inputPhone").val(phone)
-//       $("#inputRating").val(rating)
-//       $("#inputAccount").val(id)
-//     }
-//   });
-// });
-
-
+// UPDATE      **********************
 $("#update-account").on("click", function (event) {
   event.preventDefault();
 
@@ -122,69 +50,64 @@ $("#update-account").on("click", function (event) {
     balance: $("#inputBalance").val().trim(),
     email: $("#inputEmail").val().trim(),
     phone: $("#inputPhone").val().trim(),
-    account_key: $("#inputPassword").val().trim()
+    account_key: $("#inputPassword").val().trim(),
+    account_id: $("#account-number").attr("data-accountid")
+  };
+  $("#err-msg").empty("");
+  // $("#change-account-modal").modal("show");
+  console.log(changeAccount);
+
+
+
+  if (changeAccount.account_id.length > 0 && changeAccount.account_key.length > 0) {
+    $.ajax({
+      type: "PUT",
+      url: "/accounts/" + changeAccount.account_id + "/" + changeAccount.account_key,
+      data: changeAccount
+    }).then(
+      function () {
+        console.log("Updated account", changeAccount);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+
   };
 
-  // send an AJAX Put-request with jQuery
-
-  $.put("/accounts/:account_id/:account_key", changeAccount)
-
-    .then(function (data) {
-      // log the data we found
-      console.log(data);
-
-      $("#view-message").val("<h2> Account info changed. </h2>");
-    });
-
-  // empty each input box by replacing the value with an empty string
-
-
-  // $("#inputFirst").val("")
-  // $("#inputLast").val("")
-  // $("inputStreet").val("")
-  // $("#inputCity").val("")
-  // $("#inputState").val("")
-  // $("#inputZip").val("")
-  // $("#inputBalance").val("")
-  // $("#inputEmail").val("")
-  // $("#inputPhone").val("")
-  // $("#inputRating").val("")
-  // $("#inputAccount").val("")
 });
 
-
-
+// DELETE   ***************************************************
 $("#delete-account").on("click", function (event) {
   event.preventDefault();
   $("#err-msg").empty("");
   $("#delete-account-modal").modal("show");
 });
 
-$("#confirm-delete").on("click", function(event) {
+$("#confirm-delete").on("click", function (event) {
   var deleteAccount = {
     account_id: $("#account_id").val().trim(),
     account_key: $("#account_password").val().trim(),
-    }
-    console.log(deleteAccount);
-    if(deleteAccount.account_id.length >0 && deleteAccount.account_key.length>0){
-      $.ajax("/accounts/"+ deleteAccount.account_id +"/"+ deleteAccount.account_key, {
-        type: "DELETE"
-      }).then(
-        function(){
-          console.log("deleted account", deleteAccount.account_id);
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
-    }else {
-      console.log("fill out entire form");
-      $("#err-msg").empty("").text("fill out entire form");
-    }
-   
-  });
-  
-  
+  }
+  console.log(deleteAccount);
+  if (deleteAccount.account_id.length > 0 && deleteAccount.account_key.length > 0) {
+    $.ajax("/accounts/" + deleteAccount.account_id + "/" + deleteAccount.account_key, {
+      type: "DELETE"
+    }).then(
+      function () {
+        console.log("deleted account", deleteAccount.account_id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  } else {
+    console.log("fill out entire form");
+    $("#err-msg").empty("").text("fill out entire form");
+  }
 
- 
+});
+
+
+
+
 
 
