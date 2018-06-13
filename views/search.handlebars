@@ -1,9 +1,52 @@
-<h1>Rent Everything</h1>
+<div class="container" align="center">
+    <h1>Rent Everything</h1>
 
-<h2>Available Items for Rent:</h2>
+
+{{!-- <div class="col-md-6 mx-0">
+    <h2>Available Items for Rent:</h2>
+<div class="row cards-wrap">
+     <div class="col-md-12">
+        <div class="card item-card" style="width: 18rem;">
+            <img class="card-img-top" src="https://media.zigcdn.com/media/model/2016/Sep/fottune_420x210.jpg" alt="Car">
+                <div class="card-body">
+                <h5 class="card-title">car</h5>
+                <p class="card-text">suv</p>
+            <button class="btn">rent now</button>
+            </div>
+            <div class="price-wrap">$12/hr</div>
+        </div>
+    </div>
+
+     --}}
+
+    {{#each items}}
+    {{#if available}}
+    <h2>Available Items for Rent:</h2>
+    <div class="col-md-6">
+        <div class="card item-card" style="width: 18rem;">
+            <img class="card-img-top" src={{picture_link}} alt="item for rent">
+            <div class="card-body">
+                <h5 class="card-title">{{item_name}}</h5>
+                <p class="card-text">{{description}}</p>
+            <button>rent now</button>
+            </div>
+            <div class="price-wrap">{{price}}</div>
+        </div>
+    </div>
+    {{/if}}
+    {{/each}}
+</div>
+   
+</div>
+</div>
+
+
+
+{{!-- <div class="container">
+
 
 {{#each items}}
-{{#if available}}
+
     {{> Query/query-block}}
 {{/if}}
 {{/each}}
@@ -16,6 +59,12 @@
 {{/unless}}
 {{/each}}
 
+
+<div class="form-row">
+       
+
+
+</div> --}}
 {{!-- <div class="modal" id="rentModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

@@ -37,6 +37,7 @@ module.exports = function (app) {
             phone: req.body.phone,
             account_key: req.body.account_key
         }).then(function (dbAccounts) {
+            console.log("test",dbAccounts);
             console.log(dbAccounts.dataValues);
             var account_id = dbAccounts["dataValues"]["id"];
             var account_key = dbAccounts["dataValues"]["account_key"];
@@ -53,6 +54,8 @@ module.exports = function (app) {
            
             // console.log("page has been redirected");
             // res.json(dbAccounts);
+        }).catch(function(err) {
+            console.log(err)
         });
     });
 
