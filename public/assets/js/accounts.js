@@ -152,4 +152,4 @@ $("#update-account").on("click", function (event) {
 
 
 
-$(document).on("click", "delete-account", deleteAccount);
+// $(document).on("click", "delete-account", deleteAccount);
