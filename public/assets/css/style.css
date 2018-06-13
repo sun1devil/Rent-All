@@ -54,3 +54,10 @@ body {
     border-radius: 5px;
     margin: 20px 0;
 }
+
+#create-form, .create-acct-wrap {
+    background: rgba(0,0,0,.7);
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
