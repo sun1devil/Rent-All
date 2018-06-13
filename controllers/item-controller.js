@@ -35,17 +35,15 @@ module.exports = function (app) {
         // });
     });
 
-    app.put("/post-items/:item_id", function(req, res){
-        db.Items.update({
-            availability: req.body.availability
-        }, {
-            where:{
-                id: id_req.params.item_id
-            }
+    app.put("/post-items/update/:item_id", function(req, res){
+        db.Items.update({ available: req.body.available},{
+            fields:["available"],
+            where:{id: id_req.params.item_id}
         }).then(function (result){
             if (result.affectedRows == 0) {
                 return res.status(404).end();
             } else {
+                res.redirect("/search")
                 res.status(200).end();
             }
 
