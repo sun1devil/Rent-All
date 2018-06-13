@@ -19,14 +19,7 @@ module.exports = function (app) {
             }
         }).then(function (dbAccounts) {
 
-            console.log("Testing21")
-            // var hbsObj = {
-            //     account: dbAccounts.dataValues
-            // }
-            // console.log(hbsObj);
-            res.render("view-account")
-            // res.render("view-account", dbAccounts)
-            // res.render("view-account", dbAccounts);
+            res.render("view-account", dbAccounts.dataValues);
         });
     });
 
