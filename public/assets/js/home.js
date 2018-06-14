@@ -8,7 +8,7 @@ console.log("Home.js loaded");
 $("#search-item").on("click", function (event) {
   event.preventDefault();
 
-  $("#search-item").animateCss('hinge', function () {
+  $("#search-item").animateCss('pulse', function () {
     //callback (things to do after all animations are done)
     window.location.href = "/search/"
   });
@@ -19,7 +19,7 @@ $("#search-item").on("click", function (event) {
 $("#post-item").on("click", function (event) {
   event.preventDefault();
 
-  $("#post-item").animateCss('hinge', function () {
+  $("#post-item").animateCss('pulse', function () {
     window.location.href = "/post-items/new"
   });
 });
@@ -28,7 +28,7 @@ $("#post-item").on("click", function (event) {
 $("#sign-up").on("click", function (event) {
   event.preventDefault();
 
-  $("#sign-up").animateCss('hinge', function () {
+  $("#sign-up").animateCss('pulse', function () {
     window.location.href = "/accounts/new"
   });
 });
