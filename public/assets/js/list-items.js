@@ -81,7 +81,7 @@ $("#submitRent").on("click", function (event) {
 
     $.ajax({
       type: "PUT",
-      url: "/search/update/" + id,
+      url: "/search/update/" + item_id,
       data: rentalInfo
     }).then(function () {
 
