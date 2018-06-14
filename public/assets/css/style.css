@@ -1,13 +1,14 @@
 body {
     
-    background:url("../Images/ladiesbike.jpg") no-repeat center fixed;
+    background:url("../Images/bikesforrent.jpg") no-repeat center fixed;
     color: white;
     background-size: cover;
+    height:100%
 }
 
 .jumbotron {
-    background-color: rgba(0, 0, 0, 0.274);
-    color:white;
+    background: rgba(0,0,0,0);
+    /* color:white; */
 }
 
 .modal {
@@ -23,8 +24,8 @@ body {
 
 .itemsRent{
     width: 23rem;
-    background:lightcyan; 
-    opacity:0.95; 
+    background: rgba(0,0,0,0); 
+    /* opacity:0.95;  */
     display:flex;
     justify-content:center;
     align-items:center;
@@ -47,6 +48,7 @@ body {
 }
 .item-card {
     position: relative;
+    background: rgba(0,0,0,.7);
     color: #000;
 }
 .price-wrap {
@@ -88,4 +90,19 @@ body {
 #go-home{
    
     opacity: .6;
+}
+
+.container {
+
+background: rgba(86, 101, 115,.5);
+height:100%;
+}
+
+.card-body {
+    
+    color: white;
+}
+
+.card-img-top {
+    width: 70%
 }
