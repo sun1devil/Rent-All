@@ -31,7 +31,7 @@ body {
 }
 
 #rentModal{
-    opacity:0.6;
+    /* opacity:0.9; */
     text-align: center;
     color: gray;
 }
