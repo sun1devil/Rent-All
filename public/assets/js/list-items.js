@@ -20,10 +20,10 @@ $("#submitRent").on("click", function (event) {
     // };
   
     // Send the PUT request.
-    
+
     $.ajax({
       type: "PUT",
-      url: "/post-items/update/" + id,
+      url: "/search/update/" + id,
       data: newUpdatetItem
     }).then(
       function () {
