@@ -75,3 +75,12 @@ body {
     border-radius: 5px;
     margin: 20px 0;
 }
+
+#update-err-msg{
+    color: red !important;
+}
+
+
+#create-err-msg{
+    color: red !important;
+}
