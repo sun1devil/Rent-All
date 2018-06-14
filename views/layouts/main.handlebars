@@ -48,11 +48,11 @@ $.fn.extend({
       }
     })(document.createElement('div'));
 
-    this.addClass('animated ' + animationName).one(animationEnd, function() {
+      this.addClass('animated ' + animationName).one(animationEnd, function() {
       $(this).removeClass('animated ' + animationName);
 
       if (typeof callback === 'function') callback();
-    });
+      });
 
     return this;
   },
