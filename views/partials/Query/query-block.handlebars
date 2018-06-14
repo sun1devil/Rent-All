@@ -16,7 +16,7 @@
             <h5 class="card-title">{{item_name}}</h5>
             <p class="card-text">{{description}}</p>
             <p class="card-text">Availability: {{start_date}} to {{end_date}} </p>
-            <button id="rentThisItem" data-id="{{id}}" data-newtodo="{{available}}">{{#if available}}RENT{{else}}Unavailable{{/if}}
+            <button class="rentThisItem" data-id="{{id}}" data-newtodo="{{available}}">{{#if available}}RENT{{else}}Unavailable{{/if}}
         </div>
         <div class="price-wrap">{{price}}</div>
     </div>
