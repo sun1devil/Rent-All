@@ -7,6 +7,7 @@ module.exports = function (app) {
     });
 
     app.get("/accounts/view", function (req, res) {
+
         res.render("view-account");
     });
 
@@ -18,7 +19,8 @@ module.exports = function (app) {
                 account_key: req.params.account_key
             }
         }).then(function (dbAccounts) {
-
+            console.log(dbAccounts);
+            //res.cookie("id", dbAccounts.dataValues.account_id)
             res.render("view-account", dbAccounts.dataValues);
         });
     });
@@ -49,6 +51,7 @@ module.exports = function (app) {
             }
             // $.get("/accounts/view/" + account_id + "/" + account_key)
             // res.render("home");
+            res.cookie('account_id', account_id );
             res.json(acct);
             // res.redirect("/accounts/view/" + account_id + "/" + account_key)
            
