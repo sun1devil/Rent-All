@@ -23,8 +23,8 @@ body {
 
 .itemsRent{
     width: 23rem;
-    background:lightblue; 
-    opacity:0.7; 
+    background:lightcyan; 
+    opacity:0.95; 
     display:flex;
     justify-content:center;
     align-items:center;
