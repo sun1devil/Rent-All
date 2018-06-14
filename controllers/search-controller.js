@@ -36,8 +36,8 @@ module.exports = function (app) {
     });
 
     app.put("/search/update/:item_id", function(req, res){
-        db.Items.update({ available: req.body.available},{
-            fields:["available"],
+        db.Items.update({start_date: req.body.input_start,
+                        end_date: req.body.input_end},{
             where:{id: id_req.params.item_id}
         }).then(function (result){
             if (result.affectedRows == 0) {
