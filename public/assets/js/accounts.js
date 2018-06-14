@@ -35,7 +35,7 @@ $("#add-account").on("click", function (event) {
     });
   }else {
     console.log("**Please fill out entire form**");
-    $("#update-err-msg").empty("").text("**Please fill out entire form**");
+    $("#create-err-msg").empty("").text("**Please fill out entire form**");
   }
 });
 // UPDATE      **********************
