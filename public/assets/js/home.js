@@ -43,7 +43,9 @@ $("#sign-in-modal").on("click", function (event) {
 $("#go-home").on("click", function (event) {
   event.preventDefault();
   console.log("hello")
-  window.location.href = "/"
+  $("#go-home").animateCss('pulse', function () {
+    window.location.href = "/"
+  });
 });
 
 $("#sign-in").on("click", function (event) {
