@@ -4,26 +4,28 @@
   <div class="accountID">
     <h3 id="account-number" data-accountid="{{id}}">Account Number: {{id}}</h3>
   </div>
+  <h3 id="update-err-msg"></h3>
 </header>
+
 
 
 <form id="account-form">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputFirst">First Name</label>
-      <input type="text" class="form-control" id="inputFirst" value="{{first_name}}" placeholder="FirstName">
+      <input type="text" class="form-control" id="inputFirst" value="{{first_name}}" placeholder="John">
     </div>
 
     <div class="form-group col-md-6">
       <label for="inputLast">Last Name</label>
-      <input type="text" class="form-control" id="inputLast" value="{{last_name}}" placeholder="LastName">
+      <input type="text" class="form-control" id="inputLast" value="{{last_name}}" placeholder="Doe">
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail">Email</label>
-      <input type="email" class="form-control" id="inputEmail" value="{{email}}" placeholder="Email">
+      <input type="email" class="form-control" id="inputEmail" value="{{email}}" placeholder="Email@Email.com">
     </div>
 
     <div class="form-group col-md-6">
@@ -34,13 +36,13 @@
 
   <div class="form-group">
     <label for="inputStreet">Street</label>
-    <input type="text" class="form-control" id="inputStreet" value="{{street}}" placeholder="1234 Maple St">
+    <input type="text" class="form-control" id="inputStreet" value="{{street}}" placeholder="1234 Your St">
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity" value="{{city}}" placeholder="Sweet City">
+      <input type="text" class="form-control" id="inputCity" value="{{city}}" placeholder="Your City">
     </div>
     <div class="form-group col-md-4">
       <label for="inputState">State</label>

@@ -24,7 +24,7 @@ $("#add-account").on("click", function (event) {
 
   };
 
-  if (newAccount.first_name.length > 0 && newAccount.first_name.length > 0) {
+  if (newAccount.account_key.length > 0 && newAccount.phone.length > 0 && newAccount.email.length > 0 && newAccount.balance.length > 0 && newAccount.zip.length > 0 && newAccount.state.length > 0 && newAccount.city.length > 0 && newAccount.street.length > 0 && newAccount.account_key.length > 0 && newAccount.last_name.length > 0 && newAccount.first_name.length > 0) {
     $.ajax({
       type: "post",
       url: "/accounts/new",
@@ -33,8 +33,11 @@ $("#add-account").on("click", function (event) {
       console.log(data)
       window.location.href = "/accounts/view/" + data.id + "/" + data.key;
     });
+  }else {
+    console.log("**Please fill out entire form**");
+    $("#update-err-msg").empty("").text("**Please fill out entire form**");
   }
-})
+});
 // UPDATE      **********************
 $("#update-account").on("click", function (event) {
   event.preventDefault();
@@ -56,10 +59,10 @@ $("#update-account").on("click", function (event) {
   $("#err-msg").empty("");
   // $("#change-account-modal").modal("show");
   console.log(changeAccount);
+  
 
 
-
-  if (changeAccount.account_id.length > 0 && changeAccount.account_key.length > 0) {
+  if (changeAccount.account_id.length > 0 && changeAccount.account_key.length > 0 && changeAccount.phone.length > 0 && changeAccount.email.length > 0 && changeAccount.balance.length > 0 && changeAccount.zip.length > 0 && changeAccount.state.length > 0 && changeAccount.city.length > 0 && changeAccount.street.length > 0 && changeAccount.account_key.length > 0 && changeAccount.last_name.length > 0 && changeAccount.first_name.length > 0){
     $.ajax({
       type: "PUT",
       url: "/accounts/" + changeAccount.account_id + "/" + changeAccount.account_key,
@@ -72,7 +75,10 @@ $("#update-account").on("click", function (event) {
       }
     );
 
-  };
+  }else {
+    console.log("**Please fill out entire form**");
+    $("#update-err-msg").empty("").text("**Please fill out entire form**");
+  }
 
 });
 
@@ -98,6 +104,7 @@ $("#confirm-delete").on("click", function (event) {
         // Reload the page to get the updated list
         location.reload();
       }
+      
     );
   } else {
     console.log("fill out entire form");

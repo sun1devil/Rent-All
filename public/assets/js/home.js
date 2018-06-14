@@ -40,7 +40,19 @@ $("#sign-in-modal").on("click", function (event) {
   $("#account-info").modal("show");
 });
 
-
+// $("#go-home").on("click", function (event) {
+//   event.preventDefault();
+//   console.log("hello")
+//   $.ajax({
+//   type: "GET",
+//   url: "/"
+//   }).then(
+//   function () {
+//     console.log("GO Home!");
+//     // Reload the page to get the updated list
+//     location.reload();
+//   })
+// });
 
 $("#sign-in").on("click", function (event) {
   event.preventDefault();
