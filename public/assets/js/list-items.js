@@ -84,6 +84,7 @@ $("#submitRent").on("click", function (event) {
       url: "/search/update/" + item_id,
       data: rentalInfo
     }).then(function () {
+      window.location.href = "/search/";
 
     });
   }
