@@ -79,6 +79,8 @@ $("#submitRent").on("click", function (event) {
 
   if (applyRental === true) {
 
+    alert("Congratulations you just rented out this item!");
+
     $.ajax({
       type: "PUT",
       url: "/search/update/" + item_id,

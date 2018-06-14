@@ -64,9 +64,10 @@ body {
 }
 
 
+
 #account-form, .header-wrap, #create-form, .create-acct-wrap {
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 15px;
     margin: 20px 0;
 }
 
@@ -81,7 +82,7 @@ body {
 
 #go-home{
    
-    opacity: .6;
+    opacity: .95;
 }
 
 .container {

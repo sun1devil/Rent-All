@@ -60,7 +60,7 @@ $("#add-item").on("click", function (event) {
       end_date: $("#inputEnd").val().trim(),
       price: $("#inputPrice").val().trim(),
       // picture_link: userImgURL,
-      picture_link: $("#inputPrice").val().trim(),
+      picture_link: $("#inputPhoto").val().trim(),
       owner_id: account_id
     };
 
