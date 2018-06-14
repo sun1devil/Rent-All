@@ -64,15 +64,8 @@ body {
 }
 
 
-#create-form, .create-acct-wrap {
- background: rgba(0,0,0,.7);
- padding: 20px;
- border-radius: 15px;
- margin: 20px 0;
-}
 
-#account-form, .header-wrap {
-    background: rgba(0,0,0,.7);
+#account-form, .header-wrap, #create-form, .create-acct-wrap {
     padding: 20px;
     border-radius: 15px;
     margin: 20px 0;
@@ -93,9 +86,10 @@ body {
 }
 
 .container {
-
-background: rgba(86, 101, 115,.5);
-height:100%;
+    margin-top: 5%;
+    background: rgba(86, 101, 115,.5);
+    height:100%;
+    border-radius: .25rem;
 }
 
 .card-body {
@@ -105,4 +99,17 @@ height:100%;
 
 .card-img-top {
     width: 70%
+}
+
+[data-search="true"] {
+    color:white !important;
+}
+[data-post="true"] {
+    color:white !important;
+}
+[data-account="true"] {
+    color:white !important;
+}
+[data-signup="true"] {
+    color:white !important;
 }

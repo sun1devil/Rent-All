@@ -1,3 +1,5 @@
+{{> Navigation/nav-block search=true post=false account=false signup=false}}
+
 <div class="container">
   <h1 class="text-center">Rent Everything</h1>
 
@@ -9,9 +11,12 @@
 
   {{!-- <h2 class="text-center">Unavailable (Currently Rented Out by Others):</h2>
 
+--}}
+
+
   <div class="row">
     {{#each items}} {{#unless available}} {{> Query/query-block}} {{/unless}} {{/each}}
-  </div> --}}
+    </div>
 
   <div class="modal" id="rentModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">

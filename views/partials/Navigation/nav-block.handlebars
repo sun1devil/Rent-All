@@ -1,0 +1,32 @@
+{{!-- <span class="sr-only">(current)</span> --}}
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="/">
+    <img src="bird.jpg" alt="logo" style="width:40px;">
+    RENT-ALL
+  </a>
+  
+  <!-- Links -->
+  <ul class="nav navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="/search" data-search={{search}}>SEARCH </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/post-items/new" data-post={{post}}>POST</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/accounts/view" data-account={{account}}>ACCOUNT</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" id="sign-in-modal">SIGNIN</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/accounts/new" data-signup={{signup}}>SIGNUP</a>
+    </li>
+
+  </ul>
+</nav>
+
+
+{{> Modal/signin-block}}
