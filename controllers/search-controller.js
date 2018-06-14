@@ -38,15 +38,14 @@ module.exports = function (app) {
     app.put("/search/update/:item_id", function(req, res){
         db.Items.update({start_date: req.body.input_start,
                         end_date: req.body.input_end},{
-            where:{id: id_req.params.item_id}
+            where:{id: req.params.item_id}
         }).then(function (result){
-            if (result.affectedRows == 0) {
+            console.log("this is result", result)
+            if (result.changedRows == 0) {
                 return res.status(404).end();
             } else {
-                res.redirect("/search")
                 res.status(200).end();
             }
-
         })
     })
 
