@@ -1,6 +1,6 @@
 body {
     
-    background:url("../Images/bikesforrent.jpg") no-repeat center fixed;
+    background:url("../Images/gy.jpg") repeat center fixed;
     color: white;
     background-size: cover;
     height:100%
@@ -16,13 +16,10 @@ body {
 }
 
 .btn {
-
-    position:relative/absolute;
-    left:50%;
     color:white;
     background:#00adb5;
     border: 1px solid white;
-    
+
 }
 
 .itemsRent{
@@ -56,17 +53,18 @@ body {
 }
 .price-wrap {
     position: absolute;
-    right: -20px;
-    top: -17px;
-    width: 60px;
-    height: 60px;
-    background-color: lightsteelblue;
+    right: -32px;
+    top: -24px;
+    width: 75px;
+    height: 75px;
+    background-color: #00adb5;
+    border: 3px solid #fff;
     border-radius: 100%;
-    padding-top: 17px;
-    color: yellow;
+    padding-top: 20px;
+    padding-left: 6px;
+    color: #fff;
+    font-size: 22px;
 }
-
-
 
 #account-form, .header-wrap, #create-form, .create-acct-wrap {
     padding: 20px;
@@ -84,15 +82,17 @@ body {
 }
 
 #go-home{
-   
-    opacity: .95;
+ width: auto;
+ height: 65px;
 }
 
 .container {
-    margin-top: 5%;
-    background: rgba(86, 101, 115,.5);
+    padding-bottom: 2%;
+    margin-top: 10%;
+    background: rgba(86, 101, 115,.6);
     height:100%;
     border-radius: .25rem;
+    margin-bottom: 2%;
 }
 
 .card-body {
@@ -101,7 +101,12 @@ body {
 }
 
 .card-img-top {
-    width: 70%
+    width: 70%;
+    background: white;
+    margin-top: 22px;
+}
+.card-title {
+    font-size: 1.8em;
 }
 
 [data-search="true"] {
@@ -121,4 +126,10 @@ body {
 
 font-size: 1.8rem;
 font-weight: 500;
+}
+.accountID h2, .header-wrap h1 {
+    text-transform: capitalize;
+}
+hr {
+    background-color: #fff !important;
 }
