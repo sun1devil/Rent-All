@@ -22,7 +22,7 @@ Once all packages have been installed then the program can run using node server
 * [BootstrapCDN v4.1.0](https://getbootstrap.com/docs/4.1/getting-started/introduction/) - The web framework used
 * [jQuery v3.3.1](http://jquery.com/) - Java library for DOM and CSS manipulation
 * [Moment.js 2.22.1](https://momentjs.com/) - Java Library for Time calculations
-* Sequilize
+* Sequelize
 * Node
 * NPM Packages
 * MySql
@@ -47,4 +47,7 @@ Once all packages have been installed then the program can run using node server
 
 ## Additional Resouces:
 Users can get further help in w3shcools or MDN or stockoverflow or nodejs.org.
+
+## Acknowledgments
+A huuuuge MEGA bigly thank you to Amber !!  :grimacing:
 
