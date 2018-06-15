@@ -19,7 +19,10 @@ body {
 
     position:relative/absolute;
     left:50%;
-    color:black;
+    color:white;
+    background:#00adb5;
+    border: 1px solid white;
+    
 }
 
 .itemsRent{
@@ -112,4 +115,10 @@ body {
 }
 [data-signup="true"] {
     color:white !important;
+}
+
+.lead {
+
+font-size: 1.8rem;
+font-weight: 500;
 }
