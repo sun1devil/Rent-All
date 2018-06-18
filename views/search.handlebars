@@ -1,22 +1,24 @@
 {{> Navigation/nav-block search=true post=false account=false signup=false}}
 
 <div class="container">
-  <h1 class="text-center">Rent Everything</h1>
+  <header class="create-acct-wrap header-wrap" align="center">
+    <h1 class="text-center">Rent Everything</h1>
 
-  <h2 class="text-center">Available Items for Rent:</h2>
-
+    <h2 class="text-center">Available Items for Rent:</h2>
+  </header>
   <div class="row">
-    {{#each items}} {{#if available}} {{> Query/query-block}} {{/if}} {{/each}}
+    {{#each items}} 
+      {{#if available}} 
+        {{> Query/query-block rent=true}} 
+      {{else}}
+        {{> Query/query-block rented=false}}
+      {{/if}}
+    {{/each}}
   </div>
 
-  {{!-- <h2 class="text-center">Unavailable (Currently Rented Out by Others):</h2>
-
---}}
 
 
-  <div class="row">
-    {{#each items}} {{#unless available}} {{> Query/query-block}} {{/unless}} {{/each}}
-    </div>
+
 
   <div class="modal" id="rentModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">

@@ -27,11 +27,10 @@ $("#add-account").on("click", function (event) {
   if (newAccount.account_key.length > 0 && newAccount.phone.length > 0 && newAccount.email.length > 0 && newAccount.balance.length > 0 && newAccount.zip.length > 0 && newAccount.state.length > 0 && newAccount.city.length > 0 && newAccount.street.length > 0 && newAccount.account_key.length > 0 && newAccount.last_name.length > 0 && newAccount.first_name.length > 0) {
     $.ajax({
       type: "post",
-      url: "/accounts/new",
+      url: "/signup",
       data: newAccount
     }).then(function (data) {
-      console.log(data)
-      window.location.href = "/accounts/view/" + data.id + "/" + data.key;
+      window.location.href = "/accounts/view/"
     });
   }else {
     console.log("**Please fill out entire form**");

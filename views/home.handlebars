@@ -1,15 +1,20 @@
 <div id="main-container" class="container">
-<div class="jumbotron text-center">
+<div class="jumbotron text-center header-wrap" align="center">
     {{!-- <h1 class="display-4">Rent-All</h1> --}}
     <img src="../assets/Images/linkedin_banner_image_1.png" alt="logo" class="mb-4" style="width:210px;">
-    <p class="lead">Welcome to our rental page that will have anything and everything you need.</p>
+    <p class="lead">Welcome to <strong>Rent-All</strong> where you can rent anything and everything you need.</p>
     <hr class="my-4">
     <p class="lead">Start your search or post an item for rent.</p>
     <div>
-        <button type="submit" id="sign-up" class="btn">Sign Up!</button>
-        <button type="submit" id="sign-in-modal" class="btn">Sign In!</button>
-        <button type="submit" id="search-item" class="btn">Search For Item</button>
-        <button type="submit" id="post-item" class="btn">Post an Item</button>
+        {{#if isloggedin}}
+            <button type="submit" id="search-item" class="btn">Search For Item</button>
+            <button type="submit" id="post-item" class="btn">Post an Item</button>
+            <a href="/logout"> <button type="btn" class="btn">Logout</button></a>
+        {{else}}
+            <button type="submit" id="sign-in-modal" class="btn">Sign In!</button>
+            <button type="submit" id="sign-up" class="btn">Sign Up!</button>
+        {{/if}}
+        
     </div>
 </div>
 

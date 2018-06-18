@@ -1,13 +1,3 @@
- {{!--
-<div class="itemsRent">
-    <img src="/assets/Images/dog.jpg" width="75px">
-    <div>
-        <h5>{{item_name}}</h5>
-        <p>Availability: {{start_date}} to {{end_date}} </p>
-        <button id="rentThisItem" data-id="{{id}}" data-newtodo="{{available}}">{{#if available}}RENT for {{price}}{{else}}Unavailable{{/if}}
-    </div>
-</div> --}}
-
 
 <div class="col-md-6 mx-auto">
     <div class="card item-card itemsRent">
@@ -15,8 +5,8 @@
         <div class="card-body">
             <h5 class="card-title">{{item_name}}</h5>
             <p class="card-text">{{description}}</p>
-            <p id="item-date-{{id}}" class="card-text" data-start="{{start_date}}" data-end="{{end_date}}">Availability: {{start_date}} to {{end_date}} </p>
-            <button class="rentThisItem" data-id="{{id}}" data-newtodo="{{available}}">{{#if available}}RENT{{else}}Unavailable{{/if}}
+            <p id="item-date-{{id}}" class="card-text" data-start="{{start_date}}" data-end="{{end_date}}">Availability: {{start_date}} - {{end_date}} </p>
+            <button class=" {{#if rent}} rentThisItem btn{{else}} rentThisItem btn disabled{{/if}}" data-id="{{id}}" data-newtodo="{{available}}" {{#if rent}}{{else}}disabled="true"{{/if}}>{{#if available}}RENT{{else}}Unavailable{{/if}}</button>
         </div>
         <div class="price-wrap">{{price}}</div>
     </div>
