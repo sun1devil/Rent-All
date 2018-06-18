@@ -57,5 +57,5 @@ Once all packages have been installed then the program can run using node server
 Users can get further help in w3shcools or MDN or stockoverflow or nodejs.org.
 
 ## Acknowledgments
-A huuuuge MEGA bigly thank you to Amber !!  :grimacing:
+A huuuuge MEGA bigly thank you to Amber (and Jerome, Sasha and Ricky)!!  :grimacing:
 

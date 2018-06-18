@@ -5,7 +5,8 @@
   <header align="center" class="header-wrap">
   <h1>View or update your account</h1>
   <div class="accountID">
-    <h3 id="account-number" data-accountid="{{id}}">Account Number: {{id}}</h3>
+    <h3>Welcome, {{userInfo.first_name}}</h3>
+    <h5 id="account-number" data-accountemail="{{userInfo.email}}">Account email: {{userInfo.email}}</h5>
   </div>
   <h3 id="update-err-msg"></h3>
 </header>
@@ -15,41 +16,37 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputFirst">First Name</label>
-      <input type="text" class="form-control" id="inputFirst" value="{{first_name}}" placeholder="John">
+      <input type="text" class="form-control" id="inputFirst" value="{{userInfo.first_name}}" placeholder="John">
     </div>
 
     <div class="form-group col-md-6">
       <label for="inputLast">Last Name</label>
-      <input type="text" class="form-control" id="inputLast" value="{{last_name}}" placeholder="Doe">
+      <input type="text" class="form-control" id="inputLast" value="{{userInfo.last_name}}" placeholder="Doe">
     </div>
   </div>
 
   <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail">Email</label>
-      <input type="email" class="form-control" id="inputEmail" value="{{email}}" placeholder="Email@Email.com">
-    </div>
-
+  
     <div class="form-group col-md-6">
       <label for="inputPhone">Phone</label>
-      <input type="text" class="form-control" id="inputPhone" value="{{phone}}" placeholder="4155551234">
+      <input type="text" class="form-control" id="inputPhone" value="{{userInfo.phone}}" placeholder="4155551234">
     </div>
   </div>
 
   <div class="form-group">
     <label for="inputStreet">Street</label>
-    <input type="text" class="form-control" id="inputStreet" value="{{street}}" placeholder="1234 Your St">
+    <input type="text" class="form-control" id="inputStreet" value="{{userInfo.street}}" placeholder="1234 Your St">
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity" value="{{city}}" placeholder="Your City">
+      <input type="text" class="form-control" id="inputCity" value="{{userInfo.city}}" placeholder="Your City">
     </div>
     <div class="form-group col-md-4">
       <label for="inputState">State</label>
-      <select id="inputState" class="form-control" value="{{state}}">
-        <option selected>Choose...</option>
+      <select id="inputState" class="form-control" value="{{userInfo.state}}">
+        <option value="{{userInfo.state}}">{{userInfo.state}}</option>
         <option value="AL">Alabama</option>
         <option value="AK">Alaska</option>
         <option value="AZ">Arizona</option>
@@ -106,20 +103,20 @@
 
     <div class="form-group col-md-2">
       <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip" value="{{zip}}" placeholder="12345">
+      <input type="text" class="form-control" id="inputZip" value="{{userInfo.zip}}" placeholder="12345">
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputBalance">Balance</label>
-      <input type="text" class="form-control" id="inputBalance" value="{{balance}}" placeholder="N/A">
+      <input type="text" class="form-control" id="inputBalance" value="{{userInfo.balance}}" placeholder="N/A">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputPassword">Password</label>
-      <input type="password" class="form-control" id="inputPassword" value="{{account_key}}">
+      <input type="password" class="form-control" id="inputPassword" value="{{userInfo.account_key}}">
     </div>
   </div>
   
