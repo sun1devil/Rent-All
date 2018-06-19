@@ -4,15 +4,39 @@ Project to all ow users to rent out to, or rent from other users thus,  in this 
 
 This is ideal for people who need items for a short duration but do not want to purchase the items can now rent. 
 
+![demo](/public/assets/Images/Rent-All.gif)
 
 ## Using the Project
 
 Open up the [project link](https://enigmatic-shore-55514.herokuapp.com/) and you should be able to try it out!
 
-Users have to initialize code using npm init -y command in Terminal once they are in the folder with server.js file. Once initiated and JSON package created then the modules should be installed using the npm install command. 
+### Testing the application locally:
+1. Please ensure node.js is install, node.js is required to install packages from NPM. You can download the program at:
 
-Once all packages have been installed then the program can run using node server.js to run app through browser from a given port. This app will display a list of product out of which user will choose type and quantity, then the program will check if there is enough stock, if there is it will ouput a total and update the new quantity, if not it will prompt for something else. This projects handles user error when inputing values.
+    https://nodejs.org/en/download/
 
+
+2. In your terminal navigate to your specified folder, type the following to install all required packages listed in package.json:
+    ```
+    npm install
+    ```
+
+3. Create a SQL database with the name "rent_all_db". For example in MySQL:
+    ```
+    CREATE DATABASE rent_all_db;
+    ```
+
+4. Create a ".env" file with the following information and update the "<>" with your SQL server information.
+    ```
+    SEQUELIZE_USER=<root>
+    SEQUELIZE_PASSWORD=<password>
+    SEQUELIZE_HOST=<localhost>
+    ```
+
+5. Run the server by entering the following in your terminal.
+    ```
+    node server.js
+    ```
 
 ## Built With
 
