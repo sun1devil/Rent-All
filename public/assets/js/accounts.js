@@ -30,7 +30,7 @@ $("#add-account").on("click", function (event) {
       url: "/signup",
       data: newAccount
     }).then(function (data) {
-      window.location.href = "/accounts/view/"
+      window.location.href = "/"
     });
   }else {
     console.log("**Please fill out entire form**");
